@@ -82,6 +82,6 @@ function isLogged()
     return false;
 }
 
-if (!isLogged()) {
-    header('Location: connexion.php');
-}
+// if (!isLogged()) {
+//     header('Location: connexion.php');
+// }
