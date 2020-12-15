@@ -48,3 +48,14 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/* navbar */
+nav-item{
+    color:  #101413;
+}
+/* couleur police : #101413
+couleur du jaune : #F5C72F
+font-family: HammersmithOne */
+i{
+    color: grey;
+    margin-left: 10px;
+}
