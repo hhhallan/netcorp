@@ -18,8 +18,9 @@
 
     <header>
         <div class="wrap-header">
-            <nav class="navbar navbar-expand-md navbar-light bg-light">
-                <a href="#" class="navbar-brand">Logo<a>
+            <nav class="navbar navbar-expand-md navbar-light bg-dark">
+                <a href="#"><img src="asset/img/tardis.jfif" alt="tardis nasa"></a>
+                <a href="#" class="navbar-brand">NetCorp<a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar7">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -34,18 +35,6 @@
                                 <!-- dropdown -->
                                 <li class="nav-icon">
                                     <i class="far fa-user-circle"></i>
-
-                                    <!-- <div class="btn-group">
-                                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
-
-                                    <!-- </button>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <span class="dropdown-item" href="#">Mon profil</span>
-                                            <a class="dropdown-item" href="#">Mon espace client</a>
-                                            <a class="dropdown-item" href="#">Déconnexion</a>
-                                            <a class="dropdown-item" href="#">Autre chose jsp</a>
-                                        </div>
-                                    </div> -->
                                 </li>
                             </ul>
                         </div>
@@ -54,16 +43,17 @@
         <div class="profil">
             <h3>Mon profil</h3>
             <ul>
-                <li class="li"><a class="a" href="">Inscription/Connexion</a></li>
+                <li class="li"><a class="a" href="inscription.php">Inscription</a></li>
+                <li class="li"><a class="a" href="connexion.php">Connexion</a></li>
                 <li class="li"><a class="a" href="">Autre chose jsp</a></li>
             </ul>
         </div>
-        <!-- <div class="new">
+        <div class="new">
             <h3>Bonjour</h3>
             <ul>
                 <li class="li"><a class="a" href="">Mon espace client</a></li>
                 <li class="li"><a class="a" href="">Déconnexion</a></li>
                 <li class="li"><a class="a" href="">Autre chose jsp</a></li>
             </ul>
-        </div> -->
+        </div>
     </header>
