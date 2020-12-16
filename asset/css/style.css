@@ -92,16 +92,84 @@ img{
 }
 #homepage-button{
 	background-color: #F5C72F;
+	color: #101413;
 	font-size: 36px;
 	border: none;
 	border-radius: 30px;
 	margin-top: 85px;
-	padding: 10px 70px;
-	transition: .2s;
+	padding: 15px 70px;
+	transition: .4s;
 }
 #homepage-button:hover{
-	opacity: .65;
+	background-color: #f0b800;
+	color: #fff;
 }
+
+/* MODAL CONNEXION ========================================= */
+
+
+#submitted-in, #submitted-co{
+	background-color: #F5C72F;
+	border-color: #F5C72F;
+	color: #101413;
+}
+
+#submitted-in:hover, #submitted-co:hover{
+	color: #fff;
+}
+.modal-title button{
+	border: none;
+	background-color: #fff;
+}
+
+#form-inscription{
+	display: none;
+}
+
+.form-control{
+	border: none; border-radius: 0;
+	border-bottom: 1px solid lightgrey;
+	outline: none;
+}
+.form-control:focus{
+	border-color: #F5C72F;
+    box-shadow: none;
+}
+.form-group input[type=submit]{
+	border-radius: 5px;
+	border: none;
+}
+
+.modal-body{
+	height: 350px;
+}
+#form-connexion .form-group{
+	margin: 20px 0;
+}
+
+
+.error{
+	color: red;
+	font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* RESPONSIVE ============================================== */
 @media only screen and (max-width: 1400px){

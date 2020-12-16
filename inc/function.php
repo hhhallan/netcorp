@@ -82,6 +82,28 @@ function isLogged()
     return false;
 }
 
+function showJson($data)
+{
+  header("Content-type: application/json");
+  $json = json_encode($data, JSON_PRETTY_PRINT);
+  if($json) {
+    die($json);
+  } else {
+    die('error in json encoding');
+  }
+}
+
 // if (!isLogged()) {
 //     header('Location: connexion.php');
 // }
+
+// FUNCTIONS PHP - MYSQL
+// function selectWhere($many = '*',$table,$propriete,$pdoconst = PDO::PARAM_STR,$switch,$pdo)
+// {
+//     $sql = "SELECT $many FROM $table WHERE $propriete = :$propriete";
+//     $var = $pdo->prepare($sql);
+//     $var->bindValue(':$propriete',$propriete,$pdoconst);
+//     $var->execute();
+//     $result = $var->$switch;
+//     return $result;
+// };
