@@ -3,11 +3,11 @@ $(document).ready(function () {
         var disp = $('.profil').css('display');
         if (disp == 'block') {
             $('.profil').css('display', 'none');
-            console.log('nothing');
+            // console.log('nothing');
         }
         else if (disp == 'none') {
             $('.profil').css('display', 'block');
-            console.log('block');
+            // console.log('block');
         }
     })
 

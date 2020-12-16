@@ -72,6 +72,7 @@ i:hover{
     border-bottom: solid 1px lightgrey;
 
 }
+
 h3{
     padding-top: 10px;
 }
@@ -80,6 +81,7 @@ h3{
 }
 a:hover{
     color: #F5C72F;
+    text-decoration: none;
 }
 
 p{
@@ -96,7 +98,7 @@ p:hover{
     box-shadow: 0px 5px 5px 0px #F5C72F;
     padding: 12px 16px;
     z-index: 1;
-    right: 20px;
+    right: 10px;
     border-radius: 5px;
 }
 .new{
