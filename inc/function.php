@@ -28,7 +28,6 @@ function validationText($errors, $data, $key, $min, $max)
     return $errors;
 }
 
-
 function pagination($page, $num, $count)
 { ?>
     <ul>
@@ -88,11 +87,11 @@ function isLogged()
 function ipConvert($ip)
 {
     $resultbrut = '';
-    for ($i=0; $i <= 6; $i+=2) { 
-        
-        $dizaine = substr($ip, $i,1);
-        $u = $i + 1 ;
-        $unite = substr($ip, $u,1);
+    for ($i = 0; $i <= 6; $i += 2) {
+
+        $dizaine = substr($ip, $i, 1);
+        $u = $i + 1;
+        $unite = substr($ip, $u, 1);
         switch ($dizaine) {
             case '0':
                 $dizaine = 0 * 16;
@@ -100,15 +99,15 @@ function ipConvert($ip)
             case '1':
                 $dizaine = 1 * 16;
                 break;
-             case '2':
+            case '2':
                 $dizaine = 2 * 16;
-                break;  
+                break;
             case '3':
                 $dizaine = 3 * 16;
-                break;        
+                break;
             case '4':
                 $dizaine = 4 * 16;
-                break; 
+                break;
             case '5':
                 $dizaine = 5 * 16;
                 break;
@@ -124,22 +123,22 @@ function ipConvert($ip)
             case '9':
                 $dizaine = 9 * 16;
                 break;
-            case 'a':
+            case 'a' || 'A':
                 $dizaine = 10 * 16;
                 break;
-            case 'b':
+            case 'b' || 'B':
                 $dizaine = 11 * 16;
                 break;
-            case 'c':
+            case 'c' || 'C':
                 $dizaine = 12 * 16;
                 break;
-            case 'd':
+            case 'd' || 'D':
                 $dizaine = 13 * 16;
                 break;
-            case 'e':
+            case 'e' || 'E':
                 $dizaine = 14 * 16;
                 break;
-            case 'f':
+            case 'f' || 'F':
                 $dizaine = 15 * 16;
                 break;
         }
@@ -150,15 +149,15 @@ function ipConvert($ip)
             case '1':
                 $unite = 1;
                 break;
-             case '2':
+            case '2':
                 $unite = 2;
-                break;  
+                break;
             case '3':
                 $unite = 3;
-                break;        
+                break;
             case '4':
                 $unite = 4;
-                break; 
+                break;
             case '5':
                 $unite = 5;
                 break;
@@ -174,22 +173,22 @@ function ipConvert($ip)
             case '9':
                 $unite = 9;
                 break;
-            case 'a':
+            case 'a' || 'A':
                 $unite = 10;
                 break;
-            case 'b':
+            case 'b' || 'B':
                 $unite = 11;
                 break;
-            case 'c':
-                $unite = 12 ;
+            case 'c' || 'C':
+                $unite = 12;
                 break;
-            case 'd':
+            case 'd' || 'D':
                 $unite = 13;
                 break;
-            case 'e':
+            case 'e' || 'E':
                 $unite = 14;
                 break;
-            case 'f':
+            case 'f' || 'F':
                 $unite = 15;
                 break;
         }
@@ -204,3 +203,37 @@ function ipConvert($ip)
     $result = substr($resultbrut, 0, 3) . '.' . substr($resultbrut, 3, 3) . '.' . substr($resultbrut, 6, 3) . '.' . substr($resultbrut, 9, 3);
     return $result;
 }
+
+function showJson($data)
+{
+    header("content-type: application/json");
+    $json = json_encode($data, JSON_PRETTY_PRINT);
+    if ($json) {
+        die($json);
+    } else {
+        die('error in json encoding');
+    }
+}
+
+/*function insert()
+{
+
+}*/
+
+/*function update()
+{
+
+}*/
+
+/*function select($what = '*', $table,$nameCond, $condition,$type = "STR")
+{
+    require('inc/pdo.php');
+    $requete = 'SELECT ' . $what . ' FROM ' . $table . ' WHERE ' . $nameCond . ' = :' . $nameCond;
+    $sql = $requete;
+    $var = $pdo->prepare($sql);
+    $param = 'PDO::PARAM_' . $type;
+    $var->bindValue(':' . $nameCond,$condition,$param);
+    $var->execute();
+    $result = $var->fetchAll();
+    return $result;
+}*/
