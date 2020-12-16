@@ -54,15 +54,15 @@
         <div class="profil">
             <h3>Mon profil</h3>
             <ul>
-                <li class="li"><a class="a" href="">Mon espace client</a></li>
-                <li class="li"><a class="a" href="">Déconnexion</a></li>
+                <li class="li"><a class="a" href="">Inscription/Connexion</a></li>
                 <li class="li"><a class="a" href="">Autre chose jsp</a></li>
             </ul>
         </div>
         <!-- <div class="new">
             <h3>Bonjour</h3>
             <ul>
-                <li class="li"><a class="a" href="">Inscription/Connexion</a></li>
+                <li class="li"><a class="a" href="">Mon espace client</a></li>
+                <li class="li"><a class="a" href="">Déconnexion</a></li>
                 <li class="li"><a class="a" href="">Autre chose jsp</a></li>
             </ul>
         </div> -->
