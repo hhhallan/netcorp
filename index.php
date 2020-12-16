@@ -33,11 +33,11 @@ include('inc/header.php'); ?>
             <div class="modal-header">
                 <h5 class="modal-title">
                     <div class="row">
-                        <div class="col">
+                        <div class="col btn-modal">
                             <button id="mod-title-connexion">Connexion</button>
                         </div>
 
-                        <div class="col">
+                        <div class="col btn-modal">
                             <button class="mod-title-inscription">Inscription</button>
                         </div>
 
@@ -103,12 +103,11 @@ include('inc/header.php'); ?>
                         <span class="error" id="error-cpassword-in"></span>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group form-submit">
                         <input type="submit" class="form-control" id="submitted-in" name="submitted-in" value="S'inscrire">
                     </div>
 
                 </form>
-                <p style="display:none;" class="success">Formulaire envoyé avec succès !</p>
 
             </div>
         </div>
