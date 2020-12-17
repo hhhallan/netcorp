@@ -40,25 +40,32 @@
                         </div>
             </nav>
         </div>
-        <div class="profil">
-            <h3>Mon profil</h3>
-            <ul>
-                <li class="li"><a class="a" href="inscription.php">Inscription</a></li>
-                <li class="li"><a class="a" href="connexion.php">Connexion</a></li>
-                <li class="li"><a class="a" href="">Autre chose jsp</a></li>
+        
+        <div id="logged" class="menu">
+            <?php if (isLogged()) { ?>
+                <h3>Mon profil</h3>
+            <?php } else { ?>
+                <h3>Bienvenue</h3>
+            <?php } ?>
+            <ul class="ul">
+                <?php if (isLogged()) { ?>
+                    <li class="li"><a class="a" href="">Mon espace client</a></li>
+                    <li class="li"><a class="a" href="">Déconnexion</a></li>
+                    <li class="li"><a class="a" href="">Autre chose jsp</a></li>
+                <?php } else { ?>
+
+                    <li class="li"><a class="a" href="inscription.php">Inscription</a></li>
+                    <li class="li"><a class="a" href="connexion.php">Connexion</a></li>
+                    <li class="li"><a class="a" href="">Autre chose jsp</a></li>
+                <?php } ?>
             </ul>
         </div>
-        <div class="new">
-            <h3>Bonjour</h3>
-            <ul>
-                <li class="li"><a class="a" href="">Mon espace client</a></li>
-                <li class="li"><a class="a" href="">Déconnexion</a></li>
-                <li class="li"><a class="a" href="">Autre chose jsp</a></li>
-            </ul>
-        </div>
+        <?php if (isLogged()) { ?>
+            <div class="Bonjour">
+                <p class="hello">Bonjour <?php echo ucfirst($_SESSION['user']['name']); ?></p>
+            </div>
+        <?php } ?>
     </header>
 
 
 
-    <!-- <a id='login' href='#'>Log In</a>
-    <button>Submit</button> -->
