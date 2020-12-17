@@ -11,40 +11,60 @@ $(document).ready(function () {
             success: function (data) {
                 console.log(data);
                 for (let i = 0; i < data.length; i++) {
-                    /*var frame = [
-                        date = [data[i].date],
-                        version = data[i].version,
-                        ttl = data[i].ttl,
-                        nomPro = data[i].protocol.name,
-                        status = data[i].protocol.checksum.status,
-                        id = data[i].identification,
-                        ipFrom = data[i].ip.from,
-                        ipDest = data[i].ip.dest
-                    ]*/
-                    console.log(data[i].date);
+                    console.log(data[i].identification);
+                    var identification = data[i].identification;
                     var date = data[i].date;
                     var version = data[i].version;
                     var nomPro = data[i].protocol.name;
+                    var proCheck = data[i].protocol.checksum.status;
+                    var headCheck = data[i].headerChecksum;
+                    var portFrom = data[i].protocol.ports.from;
+                    var portDest = data[i].protocol.ports.dest;
+                    var flags = data[i].protocol.flags.code;
                     var ipFrom = data[i].ip.from;
                     var ipDest = data[i].ip.dest;
+                    date = convertDate(date);
+                    $.ajax({
+                        type: 'POST',
+                        url: 'ajax/ipconv.php',
+                        dataType: 'json',
+                        data: {
+                            ipFrom: ipFrom,
+                            ipDest: ipDest
+                        },
+                        success: function (response) {
+                            ipFrom = response.ipFrom;
+                            ipDest = response.ipDest;
+                            console.log(identification);
+                        },
+                        error: function (e) {
+                            console.log(e);
+                        }
+
+                    })
                     $.ajax({
                         type: 'POST',
                         url: 'ajax/insert.php',
                         data: {
-                            date : date,
-                            version : version,
-                            nomPro : nomPro,
-                            ipFrom : ipFrom,
-                            ipDest : ipDest
+                            identification: identification,
+                            date: date,
+                            version: version,
+                            nomPro: nomPro,
+                            flags: flags,
+                            proCheck: proCheck,
+                            headCheck: headCheck,
+                            portFrom: portFrom,
+                            portDest: portDest,
+                            ipFrom: ipFrom,
+                            ipDest: ipDest
                         },
-                        success: function (e) {
-                            console.log(e);
+                        success: function () {
+                            console.log('nice');
                         },
                         error: function () {
                             console.log('Something went wrong');
                         }
                     })
-                    //console.log(frame);
                 }
             },
             error: function () {
@@ -56,7 +76,14 @@ $(document).ready(function () {
     })
 })
 
-
+function convertDate(time) {
+    var t = new Date(time * 1000);
+    var day = t.getDate();
+    var month = t.getMonth();
+    var year = t.getFullYear();
+    date = year + '-' + month + '-' + day;
+    return date;
+}
 
 
 
