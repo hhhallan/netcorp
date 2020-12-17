@@ -24,4 +24,16 @@ $(document).ready(function () {
     // })
 });
 
+// $('button').on('click', function () {
+//     $('#login').replaceWith('<span>Logged In</span>');
+// });
 
+
+// $('#submit').on('click', function () {
+//     $('#login').replaceWith('<span>Logged In</span>');
+// });
+
+// $('#submit').on('click', function (e) {
+//     e.preventDefault();
+//     $('#login').replaceWith('<span>Logged In</span>');
+// });
