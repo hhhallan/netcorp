@@ -50,6 +50,12 @@ table {
 	margin: 0 auto;
 }
 
+.wrap-dashboard {
+	max-width: 1800px;
+	width: 100%;
+	margin: 0 auto
+}
+
 body {
 	font-family: 'Hammersmith One', sans-serif;
 	font-weight: 400;
@@ -63,6 +69,12 @@ img {
 button {
 	cursor: pointer;
 	font-family: 'Hammersmith One', sans-serif;
+	border: none;
+}
+
+button:focus {
+	border: none;
+	outline: none;
 }
 
 /* HOMEPAGE ============================================================== */
@@ -100,7 +112,6 @@ img {
 	background-color: #F5C72F;
 	color: #101413;
 	font-size: 36px;
-	border: none;
 	border-radius: 30px;
 	margin-top: 85px;
 	padding: 15px 70px;
@@ -122,25 +133,29 @@ img {
 
 #submitted-in:hover, #submitted-co:hover {
 	color: #fff;
-}
+} 
 
 .modal-title button {
-	border: none;
 	background-color: #fff;
 	font-size: 20px;
 }
-.modal-title{
+
+.modal-title {
 	width: 100%;
 }
-.btn-modal{
+
+.btn-modal {
 	text-align: center;
 }
+
 #form-inscription {
 	display: none;
 }
-.form-submit{
+
+.form-submit {
 	margin-top: 40px;
 }
+
 .form-control {
 	border: none;
 	border-radius: 0;
@@ -163,30 +178,121 @@ img {
 	text-align: center;
 }
 
-/* #form-connexion .form-group {
-	margin-bottom: 20px 0;
-} */
-/* #form-inscription .form-group {
-	margin: 20px 0;
-} */
-
 #form-connexion .form-control {
 	margin-bottom: 35px;
 }
 
-.custom-line{
+.custom-line {
 	display: flex;
 	justify-content: center;
 }
+
 .error {
 	color: red;
 	font-size: 14px;
 }
 
+/* DASHBOARD ================================================*/
 
+.container-dashboard {
+	display: flex;
+	justify-content: space-between;
+	height: 100%;
+	margin: 50px auto;
+}
 
+/* FAIRE DES GENERALITES AVEC BODY LOG BODY CHART ET TITLE */
 
+#title-dashboard{
+	display: flex;
+	flex-direction: column;
+	width: 12%;
+	background-color: #ececec;
+	border-radius: 5px;
+}
+.body-dashboard{
+	width: 87%;
+	background-color: #ececec;
+	border-radius: 5px;
+}
+#container-chart{
+	width: 95%;
+	margin: 45px auto;
+}
+#container-log{
+	display: none;
+	width: 95%;
+	margin: 45px auto;
+	height: 500px;
+}
 
+.btn-title-dashboard {
+	background: none;
+	width: 100%;
+	padding: 10px;
+	font-size: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+#btn-log{
+	margin-top: 45px;
+}
+.fas{
+	width: 30%;
+}
+.content-button{
+	width: 70%;
+	text-align: left;
+}
+/* LOGS */
+.pagination{
+	width: 100%;
+}
+table{
+	background-color: #fff;
+	width: 100%;height: 400px;
+	text-align: center;
+	border-radius: 5px;
+	box-shadow: 0 1px 22px -12px #000000;
+}
+th,td{
+	padding: 10px 15px;
+}
+th{
+	background-color: #F5C72F;
+	text-transform: uppercase;
+}
+tr:nth-child(odd){
+	background-color: #ececec;
+}
+
+/* CHARTS */
+#btn-chart{
+	background-color: #dfdfdf;
+}
+.chart-top{
+	display: flex;
+	justify-content: space-between;
+}
+.litte-chart{
+	width: 30%;height: 100%;
+	padding: 25px;
+	/* border-radius: 30px; */
+	background-color: #fff;
+	box-shadow: 0 1px 22px -12px #607D8B;
+}
+.chart-bottom{
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0;
+}
+.big-chart{
+	width: 48%;height: 100%;
+	padding: 25px;
+	/* border-radius: 30px; */
+	background-color: #fff;
+	box-shadow: 0 1px 22px -12px #607D8B;
+}
 
 
 /* RESPONSIVE ============================================== */
