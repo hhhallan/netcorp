@@ -54,6 +54,8 @@ body {
 	font-family: 'Hammersmith One', sans-serif;
 	font-weight: 400;
 	color: #101413;
+	background: linear-gradient(55deg, #fff 50%, #fdcd3b 50%);
+	height: 884.4px;
 }
 
 img {
@@ -96,7 +98,7 @@ img {
 	text-align: center;
 }
 
-#homepage-button {
+.homepage-buttons {
 	background-color: #F5C72F;
 	color: #101413;
 	font-size: 36px;
@@ -107,7 +109,7 @@ img {
 	transition: .4s;
 }
 
-#homepage-button:hover {
+.homepage-buttons:hover {
 	background-color: #f0b800;
 	color: #fff;
 }
@@ -198,7 +200,7 @@ img {
 	.homepage p {
 		font-size: 20px;
 	}
-	#homepage-button {
+	.homepage-buttons {
 		font-size: 28px;
 	}
 }
@@ -210,7 +212,7 @@ img {
 	.homepage p {
 		font-size: 15px;
 	}
-	#homepage-button {
+	.homepage-buttons {
 		font-size: 20px;
 	}
 }
@@ -219,7 +221,7 @@ img {
 	.homepage h1 {
 		font-size: 45px;
 	}
-	#homepage-button {
+	.homepage-buttons {
 		font-size: 15px;
 	}
 }
@@ -236,7 +238,7 @@ img {
 	img {
 		margin-top: 35px;
 	}
-	#homepage-button {
+	.homepage-buttons {
 		margin-top: 35px;
 	}
 }
@@ -248,7 +250,7 @@ img {
 	.homepage p {
 		font-size: 12px;
 	}
-	#homepage-button {
+	.homepage-buttons {
 		font-size: 12px;
 	}
 }
@@ -260,7 +262,7 @@ img {
 	.homepage p {
 		font-size: 8px;
 	}
-	#homepage-button {
+	.homepage-buttons {
 		font-size: 8px;
 	}
 }

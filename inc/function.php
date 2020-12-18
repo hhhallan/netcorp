@@ -64,33 +64,31 @@ function generateRandomString($length = 10)
 
 function isLogged()
 {
+    
     if (!empty($_SESSION['user'])) {
+        //echo $_SESSION['user']['id'];
         if (!empty($_SESSION['user']['id']) && is_numeric($_SESSION['user']['id'])) {
+           
             if (!empty($_SESSION['user']['prenom'])) {
-                if (!empty($_SESSION['user']['role'])) {
-                    if ($_SESSION['user']['role'] == 'abonne' || $_SESSION['user']['role'] == 'admin') {
-                        if (!empty($_SESSION['user']['avatar'])) {
-                            if (!empty($_SESSION['user']['ip']) && $_SESSION['user']['ip'] == $_SERVER['REMOTE_ADDR']) {
-                                return true;
-                            }
-                        }
-                    }
+                if (!empty($_SESSION['user']['ip']) && $_SESSION['user']['ip'] == $_SERVER['REMOTE_ADDR']) {
+                    
+                    return true;
                 }
             }
+        
         }
     }
-    return false;
 }
 
 function showJson($data)
 {
-  header("Content-type: application/json");
-  $json = json_encode($data, JSON_PRETTY_PRINT);
-  if($json) {
-    die($json);
-  } else {
-    die('error in json encoding');
-  }
+    header("Content-type: application/json");
+    $json = json_encode($data, JSON_PRETTY_PRINT);
+    if ($json) {
+        die($json);
+    } else {
+        die('error in json encoding');
+    }
 }
 
 // if (!isLogged()) {
