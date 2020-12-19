@@ -115,84 +115,77 @@ $(document).ready(function () {
 
     // DASHBOARD ===================================================================================
     //CLICK => LOG
-    $('#btn-log').on('click', function(e){
+    $('#btn-log').on('click', function (e) {
         e.preventDefault()
 
-        $('#btn-log').css('background-color','#dfdfdf')
-        $('#btn-chart').css('background-color','#ececec')
-        $('#container-log').css('display','block')
-        $('#container-chart').css('display','none')
+        $('#btn-log').css('background-color', '#dfdfdf')
+        $('#btn-chart').css('background-color', '#ececec')
+        $('#container-log').css('display', 'block')
+        $('#container-chart').css('display', 'none')
     })
-    $('#btn-chart').on('click', function(e){
+    $('#btn-chart').on('click', function (e) {
         e.preventDefault()
 
-        $('#btn-log').css('background-color','#ececec')
-        $('#btn-chart').css('background-color','#dfdfdf')
-        $('#container-chart').css('display','block')
-        $('#container-log').css('display','none')
+        $('#btn-log').css('background-color', '#ececec')
+        $('#btn-chart').css('background-color', '#dfdfdf')
+        $('#container-chart').css('display', 'block')
+        $('#container-log').css('display', 'none')
     })
-    
-    
-    
+
+
+
 
     //CHARTS
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
+    var ctx = document.getElementById('ttlLost').getContext('2d');
+    var chart = new Chart(ctx, {
         // The type of chart we want to create
         type: 'line',
 
         // The data for our dataset
         data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July','Aout','Septembre','Octobre','Novembre','Decembre'],
+            labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
             datasets: [{
                 label: 'My First dataset',
-                backgroundColor: 'rgba(0, 0, 0, 0)',
+                backgroundColor: 'rgb(255, 99, 132)',
                 borderColor: 'rgb(255, 99, 132)',
                 data: [0, 10, 5, 2, 20, 30, 45]
             }]
         },
 
         // Configuration options go here
-        options: {}
-    });
-
-    var ctx = document.getElementById('myChart2').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
         options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
+            title: {
+                display: true,
+                text: 'Nombre de TTL perdues au total'
             }
         }
     });
+    var ctx = document.getElementById('tramDay').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [0, 10, 5, 2, 20, 30, 45]
+            }]
+        },
+
+        // Configuration options go here
+        options: {
+            title: {
+                display: true,
+                text: 'Nombre de trames/j'
+            }
+        }
+    });
+
+    
 
     var ctx = document.getElementById('myChart3').getContext('2d');
     var myChart = new Chart(ctx, {
@@ -231,46 +224,61 @@ $(document).ready(function () {
             }
         }
     });
-    var ctx = document.getElementById('myChart4').getContext('2d');
+    var ctx = document.getElementById('tramType').getContext('2d');
     var chart = new Chart(ctx, {
         // The type of chart we want to create
-        type: 'radar',
+        type: 'bar',
 
         // The data for our dataset
         data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July','Aout','Septembre','Octobre','Novembre','Decembre'],
+            labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
             datasets: [{
                 label: 'My First dataset',
-                backgroundColor: 'rgba(0, 0, 0, 0)',
+                backgroundColor: 'rgb(255, 99, 132)',
                 borderColor: 'rgb(255, 99, 132)',
                 data: [0, 10, 5, 2, 20, 30, 45]
             }]
         },
 
         // Configuration options go here
-        options: {}
+        options: {
+            title: {
+                display: true,
+                text: 'Nombre de trames par type de requête'
+            }
+        }
     });
-    var ctx = document.getElementById('myChart5').getContext('2d');
+    var ctx = document.getElementById('requestFail').getContext('2d');
     var chart = new Chart(ctx, {
         // The type of chart we want to create
-        type: 'pie',
+        type: 'doughnut',
 
         // The data for our dataset
         data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July','Aout','Septembre','Octobre','Novembre','Decembre'],
+            labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
             datasets: [{
                 label: 'My First dataset',
-                backgroundColor: 'rgba(0, 0, 0, 0)',
+                backgroundColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'rgb(255, 12, 54)',
+                backgroundColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'rgb(255, 99, 132)',
                 borderColor: 'rgb(255, 99, 132)',
                 data: [0, 10, 5, 2, 20, 30, 45]
             }]
         },
 
         // Configuration options go here
-        options: {}
+        options: {
+            title: {
+                display: true,
+                text: 'Nombre de requêtes en échec'
+            }
+        }
     });
+    
+    
 
 
     //CHARTS onclick
-   
+
 })

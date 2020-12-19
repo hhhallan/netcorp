@@ -3,6 +3,20 @@ session_start();
 require('inc/pdo.php');
 require('inc/function.php');
 
+
+
+
+$sql = "SELECT * FROM res_trames ORDER BY date DESC";
+$var = $pdo->prepare($sql);
+$var->execute();
+$trames = $var->fetchAll();
+//debug($trames);
+
+
+
+
+
+
 include('inc/header.php'); ?>
 
 <div class="wrap-dashboard">
@@ -26,9 +40,7 @@ include('inc/header.php'); ?>
                     <table>
                         <thead>
                             <tr>
-                                <th>Statut</th>
                                 <th>Date</th>
-                                <th>ID</th>
                                 <th>Identifiant</th>
                                 <th>Version</th>
                                 <th>Nom du protocole</th>
@@ -41,22 +53,22 @@ include('inc/header.php'); ?>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php //foreach ($datas as $data) { ?>
-                            <tr>
-                                <td><?php echo 'bonjour';//echo $data['text']; ?></td> <!-- bold -->
-                                <td><?php echo 'bonjour';//echo $data['text']; ?></td>
-                                <td><?php echo 'bonjour';//echo $data['text']; ?></td>
-                                <td><?php echo 'bonjour';//echo $data['text']; ?></td>
-                                <td><?php echo 'bonjour';//echo $data['text']; ?></td>
-                                <td><?php echo 'bonjour';//echo $data['text']; ?></td>
-                                <td><?php echo 'bonjour';//echo $data['text']; ?></td>
-                                <td><?php echo 'bonjour';//echo $data['text']; ?></td>
-                                <td><?php echo 'bonjour';//echo $data['text']; ?></td>
-                                <td><?php echo 'bonjour';//echo $data['text']; ?></td>
-                                <td><?php echo 'bonjour';//echo $data['text']; ?></td>
-                                <td><?php echo 'bonjour';//echo $data['text']; ?></td>
+                            <?php foreach ($trames as $trame) { 
+                                if($trame['protocol_checksum'] == 'good'){
+                                    echo '<tr class="tr-good">';
+                                } elseif($trame['protocol_checksum'] == 'disabled') {echo '<tr class="tr-notgood">';} ?>
+                                <td><?php echo $trame['date']; ?></td> <!-- bold -->
+                                <td><?php echo $trame['identifiant']; ?></td>
+                                <td><?php echo $trame['version']; ?></td>
+                                <td><?php echo $trame['protocole_name']; ?></td>
+                                <td><?php echo $trame['flags']; ?></td>
+                                <td><?php echo $trame['header_checksum']; ?></td>
+                                <td><?php echo $trame['port_from']; ?></td>
+                                <td><?php echo $trame['port_dest']; ?></td>
+                                <td><?php echo $trame['ip_from']; ?></td>
+                                <td><?php echo $trame['ip_dest']; ?></td>
                             </tr>
-                            <?php //} ?>
+                            <?php } ?>
                         </tbody>
                     </table>
 
@@ -65,10 +77,10 @@ include('inc/header.php'); ?>
             <div id="container-chart">
                 <div class="chart-top">
                     <div class="litte-chart">
-                        <canvas id="myChart" width="400" height="300"></canvas>
+                        <canvas id="ttlLost" width="400" height="300"></canvas>
                     </div>
                     <div class="litte-chart">
-                        <canvas id="myChart2" width="400" height="300"></canvas>
+                        <canvas id="tramDay" width="400" height="300"></canvas>
                     </div>
                     <div class="litte-chart">
                         <canvas id="myChart3" width="400" height="300"></canvas>
@@ -77,10 +89,10 @@ include('inc/header.php'); ?>
 
                 <div class="chart-bottom">
                     <div class="big-chart">
-                        <canvas id="myChart4" width="600" height="550"></canvas>
+                        <canvas id="tramType" width="600" height="550"></canvas>
                     </div>
                     <div class="big-chart">
-                        <canvas id="myChart5" width="600" height="550"></canvas>
+                        <canvas id="requestFail" width="600" height="550"></canvas>
                     </div>
                 </div>
             </div>
