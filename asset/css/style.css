@@ -57,6 +57,7 @@ font-family: HammersmithOne */
 body{
     font-family: 'Hammersmith One', sans-serif; font-weight: 400;
     color: #101413;
+    background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
 }
 i{
     color: #fff;
@@ -69,14 +70,14 @@ i:hover{
     cursor: pointer;
 }
 .a{
-    color: #101413;
-    border-bottom: solid 1px lightgrey;
+    color: #000;
+    border-bottom: solid 1px #000;
 
 }
 
 h3{
     padding-top: 10px;
-    color: #F5C72F;
+    color: #000;
     border-bottom: solid 1px #000;
     font-size: 1.3em;
 }
@@ -84,7 +85,7 @@ h3{
     padding-top: 10px;
 }
 a:hover{
-    color: #F5C72F;
+    color: #a52a2a   ;
     text-decoration: none;
 }
 
@@ -104,6 +105,7 @@ p:hover{
     z-index: 1;
     right: 10px;
     border-radius: 5px;
+    background-color: #fbf0a6;
 }
 
 ul.navbar-nav a:hover{
@@ -123,6 +125,50 @@ img{
     width: 50px;
     height: 50px;
 }
-img:hover{
+
+
+/* body */
+.body{
+    width: 500px;
+    height: 500px;
+}
+
+
+
+
+
+/* footer */
+footer{
+    background-color: #343a40;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff !important;
+    
+}
+
+.span:hover{
+    color: #F5C72F !important;
     cursor: pointer;
+}
+.social{
+    color: #ffffff;
+    padding: 0px 5px;
+}
+.fa-linkedin-in:hover{
+    color: #0072b1 ;
+}
+.fa-facebook-f:hover{
+    color:  #1778F2;
+}
+.fa-twitter:hover{
+    color: #1DA1F2;
+}
+.fa-instagram{
+    border-radius: 10px;
+}
+.fa-instagram:hover{
+    color: #DD2A7B;
 }
