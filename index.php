@@ -61,11 +61,11 @@ include('inc/header.php'); ?>
                     <span class="error" id="error-connexion"></span>
 
                     <div class="form-group">
-                        <input type="email" class="form-control" id="co-email" name="co-email" placeholder="E-mail *">
+                        <input type="email" class="form-control form-co-errors" id="co-email" name="co-email" placeholder="E-mail *">
                     </div>
 
                     <div class="form-group">
-                        <input type="password" class="form-control" id="co-password" name="co-password" placeholder="Mot de passe *">
+                        <input type="password" class="form-control form-co-errors" id="co-password" name="co-password" placeholder="Mot de passe *">
                         <a href="">Mot de passe oublié ?</a>
                     </div>
 

@@ -51,23 +51,30 @@ $(document).ready(function () {
                     console.log('not gg')
 
                     if (response.errors.prenom != null) {
+
+                        // A VOTER CAR PAS FORCEMMENT BEAU
                         $('#error-prenom').html(response.errors.prenom)
+                        $('#prenom').css('box-shadow','0px 0px 5px 1px #FF0000')
                     } else { $('#error-prenom').html('') }
 
                     if (response.errors.nom != null) {
                         $('#error-nom').html(response.errors.nom)
+                        $('#nom').css('box-shadow','0px 0px 5px 1px #FF0000')
                     } else { $('#error-nom').html('') }
 
                     if (response.errors.email != null) {
                         $('#error-email-in').html(response.errors.email)
+                        $('#in-email').css('box-shadow','0px 0px 5px 1px #FF0000')
                     } else { $('#error-email-in').html('') }
 
                     if (response.errors.password != null) {
                         $('#error-password-in').html(response.errors.password)
+                        $('#in-password').css('box-shadow','0px 0px 5px 1px #FF0000')
                     } else { $('#error-password-in').html('') }
 
                     if (response.errors.cpassword != null) {
                         $('#error-cpassword-in').html(response.errors.cpassword)
+                        $('#in-confirm-password').css('box-shadow','0px 0px 5px 1px #FF0000')
                     } else { $('#error-cpassword-in').html('') }
 
                 }
@@ -103,6 +110,7 @@ $(document).ready(function () {
 
                     if (response.errors.connexion != null) {
                         $('#error-connexion').html(response.errors.connexion)
+                        $('.form-co-errors').css('box-shadow','0px 0px 5px 1px #FF0000')
                     } else { $('#error-connexion').html('') }
 
                 }
