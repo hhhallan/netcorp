@@ -144,11 +144,11 @@ $(document).ready(function () {
         // The data for our dataset
         data: {
             labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
-            datasets: [{
-                label: 'My First dataset',
+            datasets: [{ 
+                label: 'Nombre de TTL perdues au total',
                 backgroundColor: 'rgb(255, 99, 132)',
                 borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45]
+                data: [0, 1,6,34,2,37]
             }]
         },
 
@@ -156,7 +156,7 @@ $(document).ready(function () {
         options: {
             title: {
                 display: true,
-                text: 'Nombre de TTL perdues au total'
+                text: 'TTL'
             }
         }
     });
@@ -169,7 +169,7 @@ $(document).ready(function () {
         data: {
             labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
             datasets: [{
-                label: 'My First dataset',
+                label: 'Nombre de trames',
                 backgroundColor: 'rgb(255, 99, 132)',
                 borderColor: 'rgb(255, 99, 132)',
                 data: [0, 10, 5, 2, 20, 30, 45]
@@ -180,7 +180,7 @@ $(document).ready(function () {
         options: {
             title: {
                 display: true,
-                text: 'Nombre de trames/j'
+                text: 'TRAMES'
             }
         }
     });
@@ -233,7 +233,7 @@ $(document).ready(function () {
         data: {
             labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
             datasets: [{
-                label: 'My First dataset',
+                label: 'Nombre de trames par type de requête',
                 backgroundColor: 'rgb(255, 99, 132)',
                 borderColor: 'rgb(255, 99, 132)',
                 data: [0, 10, 5, 2, 20, 30, 45]
@@ -244,7 +244,7 @@ $(document).ready(function () {
         options: {
             title: {
                 display: true,
-                text: 'Nombre de trames par type de requête'
+                text: 'TRAMES/REQUETE'
             }
         }
     });
@@ -255,15 +255,15 @@ $(document).ready(function () {
 
         // The data for our dataset
         data: {
-            labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
+            labels: ['echec', 'reussite'],
             datasets: [{
-                label: 'My First dataset',
-                backgroundColor: 'rgb(255, 99, 132)',
-                backgroundColor: 'rgb(255, 12, 54)',
-                backgroundColor: 'rgb(255, 99, 132)',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45]
+                backgroundColor: [
+                'rgb(228, 39, 39)',
+                'rgb(64, 184, 26)'],
+                // borderColor: [
+                // '#E42727',
+                // '#40B81A'],
+                data: [60,40]
             }]
         },
 
@@ -271,13 +271,11 @@ $(document).ready(function () {
         options: {
             title: {
                 display: true,
-                text: 'Nombre de requêtes en échec'
+                text: 'Requete'
             }
         }
     });
     
-    
-
 
     //CHARTS onclick
 
