@@ -17,6 +17,7 @@ include('inc/header.php'); ?>
             <div class="left-button">
                 <?php if(isLogged()){ ?>
                     <button class="homepage-buttons" onclick="window.location.href='dashboard.php'">Mon espace</button>
+                    <button class="homepage-buttons" onclick="window.location.href='deconnexion.php'">deco</button>
                 <?php  } else { ?>
                     <button type="button" id="homepage-button" class="homepage-buttons" data-toggle="modal" data-target="#exampleModalCenter">
                     Se connecter
