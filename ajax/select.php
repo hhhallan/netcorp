@@ -14,7 +14,7 @@ $portDest = trim(strip_tags($_POST['portDest']));
 $ipFrom = trim(strip_tags($_POST['ipFrom']));
 $ipDest = trim(strip_tags($_POST['ipDest']));
 
-$sql = "INSERT INTO res_trames (identifiant,date,version,protocol_name,flags,protocol_checksum,header_checksum,port_from,port_dest,ip_from,ip_dest) VALUES(:identification,:date,:version,:nomPro,:flags,:proCheck,:headCheck,:portFrom,:portDest,:ipFrom,:ipDest)";
+$sql = "SELECT * FROM res_trames WHERE identifiant = :identification AND date = :date AND version = :version AND protocol_name = :nomPro AND flags = :flags AND protocol_checksum = :proCheck AND header_checksum = :headCheck AND port_from = :portFrom AND port_dest = :portDest AND ip_from = :ipFrom AND ip_dest = :ipDest";
 $query = $pdo->prepare($sql);
 $query->bindValue(':identification', $identification, PDO::PARAM_STR);
 $query->bindValue(':date', $date, PDO::PARAM_STR);
@@ -28,3 +28,9 @@ $query->bindValue(':portDest', $portDest, PDO::PARAM_STR);
 $query->bindValue(':ipFrom', $ipFrom, PDO::PARAM_STR);
 $query->bindValue(':ipDest', $ipDest, PDO::PARAM_STR);
 $query->execute();
+$trame = $query->fetch();
+
+$data = array(
+    'trame' => $trame
+);
+showJson($data);

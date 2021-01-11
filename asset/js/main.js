@@ -20,7 +20,7 @@ $(document).ready(function () {
                     var headCheck = data[i].headerChecksum;
                     var portFrom = data[i].protocol.ports.from;
                     var portDest = data[i].protocol.ports.dest;
-                    var flags = data[i].protocol.flags.code;
+                    var flags = data[i].flags.code;
                     var ipFrom = data[i].ip.from;
                     var ipDest = data[i].ip.dest;
                     date = convertDate(date);
@@ -40,11 +40,10 @@ $(document).ready(function () {
                         error: function (e) {
                             console.log(e);
                         }
-
                     })
                     $.ajax({
                         type: 'POST',
-                        url: 'ajax/insert.php',
+                        url: 'ajax/select.php',
                         data: {
                             identification: identification,
                             date: date,
@@ -58,11 +57,38 @@ $(document).ready(function () {
                             ipFrom: ipFrom,
                             ipDest: ipDest
                         },
-                        success: function () {
-                            console.log('nice');
+                        success: function(back){
+                            if(back.trame != null && back.trame.length != null){
+                                console.log('all-green');
+                                $.ajax({
+                                    type: 'POST',
+                                    url: 'ajax/insert.php',
+                                    data: {
+                                        identification: identification,
+                                        date: date,
+                                        version: version,
+                                        nomPro: nomPro,
+                                        flags: flags,
+                                        proCheck: proCheck,
+                                        headCheck: headCheck,
+                                        portFrom: portFrom,
+                                        portDest: portDest,
+                                        ipFrom: ipFrom,
+                                        ipDest: ipDest
+                                    },
+                                    success: function () {
+                                        console.log('nice');
+                                    },
+                                    error: function () {
+                                        console.log('Something went wrong');
+                                    }
+                                })
+                            } else {
+                                console.log('trame déjà existante')
+                            }
                         },
-                        error: function () {
-                            console.log('Something went wrong');
+                        error: function(){
+                            console.log('error');
                         }
                     })
                 }
@@ -81,7 +107,10 @@ function convertDate(time) {
     var day = t.getDate();
     var month = t.getMonth();
     var year = t.getFullYear();
-    date = year + '-' + month + '-' + day;
+    var h = t.getHours();
+    var m = t.getMinutes();
+    var s = t.getSeconds();
+    date = year + '-' + month + '-' + day + ' ' + h + ':' + m + ':' + s;
     return date;
 }
 

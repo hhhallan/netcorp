@@ -81,9 +81,6 @@ function isLogged()
     return false;
 }
 
-// if (!isLogged()) {
-//     header('Location: connexion.php');
-// }
 function ipConvert($ip)
 {
     $resultbrut = '';
@@ -223,17 +220,4 @@ function showJson($data)
 /*function update()
 {
 
-}*/
-
-/*function select($what = '*', $table,$nameCond, $condition,$type = "STR")
-{
-    require('inc/pdo.php');
-    $requete = 'SELECT ' . $what . ' FROM ' . $table . ' WHERE ' . $nameCond . ' = :' . $nameCond;
-    $sql = $requete;
-    $var = $pdo->prepare($sql);
-    $param = 'PDO::PARAM_' . $type;
-    $var->bindValue(':' . $nameCond,$condition,$param);
-    $var->execute();
-    $result = $var->fetchAll();
-    return $result;
 }*/
