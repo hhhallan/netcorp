@@ -127,15 +127,6 @@ img{
 }
 
 
-/* body */
-.body{
-    width: 500px;
-    height: 500px;
-}
-
-
-
-
 
 /* footer */
 footer{
@@ -171,4 +162,64 @@ footer{
 }
 .fa-instagram:hover{
     color: #DD2A7B;
+}
+
+
+/* responsive */
+@media only screen and (max-width: 1832px) {
+	.menu{
+		display: none;
+		position: absolute;
+		min-width: 160px;
+		box-shadow: 0px 5px 5px 0px #F5C72F;
+		padding: 12px 16px;
+		z-index: 1;
+		top: 50px;
+		right: 10px;
+		border-radius: 5px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.fab{
+		display: none
+		min-width: 200px;
+		padding: 12px 16px;
+		z-index: 1;
+		top: 50px;
+		right: 10px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.body{
+		display: none
+		min-width: 0.5px;
+		padding: 12px 16px;
+		z-index: 1;
+		top: 50px;
+		right: 10px;
+	}
+}
+
+/* The "responsive" class is added to the me.menu with JavaScript when the user clicks on the icon. This class makes the me.menu look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .menu.responsive {position: relative;}
+  .menu.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .menu.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .menu.responsive .dropdown {float: none;}
+  .menu.responsive .dropdown-content {position: relative;}
+  .menu.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
 }
