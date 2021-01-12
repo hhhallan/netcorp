@@ -54,13 +54,13 @@ include('inc/header.php'); ?>
                         </thead>
                         <tbody>
                             <?php foreach ($trames as $trame) { 
-                                if($trame['protocol_checksum'] == 'good'){
+                                if($trame['status'] == 'success'){
                                     echo '<tr class="tr-good">';
-                                } elseif($trame['protocol_checksum'] == 'disabled') {echo '<tr class="tr-notgood">';} ?>
+                                } elseif($trame['status'] == 'timeout') {echo '<tr class="tr-notgood">';} ?>
                                 <td><?php echo $trame['date']; ?></td> <!-- bold -->
                                 <td><?php echo $trame['identifiant']; ?></td>
                                 <td><?php echo $trame['version']; ?></td>
-                                <td><?php echo $trame['protocole_name']; ?></td>
+                                <td><?php echo $trame['protocol_name']; ?></td>
                                 <td><?php echo $trame['flags']; ?></td>
                                 <td><?php echo $trame['header_checksum']; ?></td>
                                 <td><?php echo $trame['port_from']; ?></td>

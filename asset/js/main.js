@@ -248,6 +248,27 @@ $(document).ready(function () {
             }
         }
     });
+
+
+    
+
+    // REQUETE SUCCESS/ECHEC ==================================
+    
+    $.ajax({
+        method: 'POST',
+        url: 'charts/requestfail.php',
+        data: {
+            status: 'success'
+        },
+
+        success: function(response){
+            console.log(response)
+           // console.log(response.nbsuccess)
+           // console.log(response.nball)
+        }
+    })
+
+
     var ctx = document.getElementById('requestFail').getContext('2d');
     var chart = new Chart(ctx, {
         // The type of chart we want to create
@@ -255,7 +276,7 @@ $(document).ready(function () {
 
         // The data for our dataset
         data: {
-            labels: ['echec', 'reussite'],
+            labels: ['Echec', 'Réussite'],
             datasets: [{
                 backgroundColor: [
                 'rgb(228, 39, 39)',
