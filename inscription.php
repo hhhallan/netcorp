@@ -3,6 +3,8 @@ require('inc/pdo.php');
 require('inc/function.php');
 //debug($_POST);
 
+$title = 'Inscription';
+
 $errors = array();
 $success = false;
 
@@ -44,6 +46,7 @@ if (!empty($password) && !empty($cpassword)) {
     }
 } else {
     $errors['password'] = 'Veuillez renseigner vos mots de passe.';
+    $errors['cpassword'] = 'Veuillez renseigner vos mots de passe.';
 }
 
 
@@ -53,10 +56,9 @@ if (count($errors) == 0) {
 
     // insertion BDD
     $hashPassword = password_hash($password,PASSWORD_DEFAULT);
-    $token = generateRandomString(120);
 
-    $sql = "INSERT INTO res_users (name,surname,email,password,created_at,token)
-            VALUES (:prenom,:nom,:email,:password,NOW(),'$token')";
+    $sql = "INSERT INTO res_users (name,surname,email,password,created_at)
+            VALUES (:prenom,:nom,:email,:password,NOW())";
     $var = $pdo->prepare($sql);
     $var->bindValue(':prenom',$prenom,PDO::PARAM_STR);
     $var->bindValue(':nom',$nom,PDO::PARAM_STR);

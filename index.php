@@ -3,6 +3,8 @@ session_start();
 require('inc/pdo.php');
 require('inc/function.php');
 
+$title = 'Accueil';
+
 include('inc/header.php'); ?>
 
 
@@ -67,7 +69,7 @@ include('inc/header.php'); ?>
 
                     <div class="form-group">
                         <input type="password" class="form-control form-co-errors" id="co-password" name="co-password" placeholder="Mot de passe *">
-                        <a href="">Mot de passe oublié ?</a>
+                        <a href="forgotmdp.php">Mot de passe oublié ?</a>
                     </div>
 
                     <div class="form-group">
@@ -119,6 +121,8 @@ include('inc/header.php'); ?>
         </div>
     </div>
 </div>
+
+
 </div>
 
 <?php

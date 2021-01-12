@@ -91,6 +91,31 @@ function showJson($data)
     }
 }
 
+function tokenDelay($token_at,$time)
+{
+    $result = strtotime(date('Y-m-d H:i:s')) - strtotime($token_at);
+    if($result < $time)
+    {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function checkPassword($password1,$password2)
+{
+    // PASSWORDS
+if (!empty($password1) && !empty($password2)) {
+    if ($password1 != $password2) {
+        $errors['password2'] = 'Veuillez renseigner des mots de passe identiques.';
+    } elseif (mb_strlen($password1) < 6) {
+        $errors['password1'] = 'Minimum 6 caractères';
+    }
+} else {
+    $errors['password1'] = 'Veuillez renseigner vos mots de passe.';
+    $errors['password2'] = 'Veuillez renseigner vos mots de passe.';
+}
+}
 // if (!isLogged()) {
 //     header('Location: connexion.php');
 // }
