@@ -50,6 +50,7 @@ table {
 	margin: 0 auto;
 }
 
+
 .wrap-dashboard {
 	max-width: 1800px;
 	width: 100%;
@@ -81,13 +82,13 @@ button:focus {
 
 /* HEADER ================================================================*/
 
-i{
+.far{
     color: #fff;
     margin-left: 10px;
     font-size: 30px;
     
 }
-i:hover{
+.far:hover{
     color: #F5C72F;
     cursor: pointer;
 }
@@ -111,13 +112,6 @@ a:hover{
     text-decoration: none;
 }
 
-p{
-    margin-right: 10px;
-}
-p:hover{
-    text-decoration: none;
-    color: #F5C72F;
-}
 .menu{
     display: none;
     position: absolute;
@@ -142,8 +136,20 @@ ul.navbar-nav a:hover{
 .nav-link{
     color: #fff !important;
 }
+.nav-link{
+    margin-right: 10px;
+}
+.nav-link:hover{
+    text-decoration: none;
+    color: #F5C72F;
+}
 
-
+.hello{
+    color: #fff;
+}
+.hello-user{
+    color: #F5C72F;
+}
 /* HOMEPAGE ============================================================== */
 
 .homepage {

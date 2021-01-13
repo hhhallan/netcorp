@@ -20,11 +20,10 @@
         <div class="wrap-header">
             <?php if (isLogged()) { ?>
                 <nav id="connect" class="navbar navbar-expand-md navbar-light bg-dark">
-                    <a href="#"><img src="asset/img/chart.svg" alt="tardis nasa"></a>
                     <a href="index.php" class="navbar-brand">NetCorp<a>
                             <?php if (isLogged()) { ?>
                                 <!-- <div class="Bonjour"> -->
-                                <p class="hello">Bonjour <span><?php echo ucfirst($_SESSION['user']['prenom']); ?></span></p>
+                                <p class="hello">Bonjour <span class="hello-user"><?php echo ucfirst($_SESSION['user']['prenom']); ?></span></p>
                                 <!-- </div> -->
                             <?php } ?>
                             <div class="navbar-collapse collapse justify-content-stretch" id="navbar7">
@@ -49,6 +48,7 @@
                                     <li class="li"><a class="a" href="">Autre chose jsp</a></li>
                                 </ul>
                             </div>
+                            
                 </nav>
             <?php } else { ?>
                 <nav id="notconnect" class="navbar navbar-expand-md navbar-light bg-dark">
