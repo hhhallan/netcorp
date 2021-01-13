@@ -36,19 +36,18 @@
                                     </li>
                                     <!-- dropdown -->
                                     <li class="nav-icon">
-                                        <i class="far fa-user-circle"></i>
+                                        <i class="far fa-user-circle" id="test"></i>
                                     </li>
                                 </ul>
                             </div>
-                            <div id="logged" class="menu">
+                            <div id="hide" class="menu">
                                 <h3>Mon profil</h3>
                                 <ul class="ul">
                                     <li class="li"><a class="a" href="dashboard.php">Mon espace client</a></li>
                                     <li class="li"><a class="a" href="deconnexion.php">Déconnexion</a></li>
-                                    <li class="li"><a class="a" href="">Autre chose jsp</a></li>
                                 </ul>
                             </div>
-                            
+
                 </nav>
             <?php } else { ?>
                 <nav id="notconnect" class="navbar navbar-expand-md navbar-light bg-dark">
@@ -66,16 +65,15 @@
                                         <p><a class="nav-link" href="contact.php">Contact</a></p>
                                     </li>
                                     <!-- dropdown -->
-                                    <li class="nav-icon">
+                                    <li class="nav-icon" id="test">
                                         <i class="far fa-user-circle"></i>
                                     </li>
                                 </ul>
                             </div>
-                            <div id="notlogged" class="menu">
+                            <div id="hide" class="menu">
                                 <h3>Bienvenue</h3>
                                 <ul>
                                     <li class="li"><a class="a" data-toggle="modal" data-target="#exampleModalCenter" href="">Inscription/connexion</a></li>
-                                    <li class="li"><a class="a" href="">Autre chose jsp</a></li>
                                 </ul>
                             </div>
         </div>

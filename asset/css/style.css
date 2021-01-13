@@ -94,7 +94,7 @@ button:focus {
 }
 .a{
     color: #000;
-    border-bottom: solid 1px #000;
+    /* border-bottom: solid 1px #000; */
 
 }
 
@@ -119,8 +119,9 @@ a:hover{
     box-shadow: 0px 5px 5px 0px #F5C72F;
     padding: 12px 16px;
     z-index: 1;
-    right: 10px;
-    border-radius: 5px;
+    right: 30px;
+    top: 40px;
+    border-radius: 10px;
     background-color: #fbf0a6;
 }
 
@@ -391,7 +392,7 @@ footer{
     color: #F5C72F !important;
     cursor: pointer;
 }
-.social{
+.fab{
     color: #ffffff;
     padding: 0px 5px;
 }
