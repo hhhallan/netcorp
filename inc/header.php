@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/ceee3d5b7f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="asset/css/style.css">
 
     <title>NetCorp</title>
 </head>
+
 
 <body>
 
@@ -20,7 +20,7 @@
         <div class="wrap-header">
             <?php if (isLogged()) { ?>
                 <nav id="connect" class="navbar navbar-expand-md navbar-light bg-dark">
-                    <a href="#"><img src="asset/img/chart.svg" alt="tardis nasa"></a>
+                    <a href="#"><img class="tardis" src="asset/img/chart.svg" alt="tardis nasa"></a>
                     <a href="#" class="navbar-brand">NetCorp<a>
                             <?php if (isLogged()) { ?>
                                 <!-- <div class="Bonjour"> -->
@@ -84,8 +84,3 @@
         </div>
         </nav>
     <?php } ?>
-
-
-  
-
-    

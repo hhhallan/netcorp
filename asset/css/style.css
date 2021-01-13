@@ -5,19 +5,7 @@
 * Browsers: last 4 version
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -25,41 +13,76 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before, blockquote:after, q:before, q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
 
+/* NETCORP =============================================================== */
 
-/* couleur police : #101413
-couleur du jaune : #F5C72F
-font-family: HammersmithOne */
-/* header */
-body{
-    font-family: 'Hammersmith One', sans-serif; font-weight: 400;
-    color: #101413;
-    background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+.wrap-homepage {
+	max-width: 1500px;
+	width: 100%;
+	margin: 0 auto;
 }
 .far{
+
+.wrap-dashboard {
+	max-width: 1800px;
+	width: 100%;
+	margin: 0 auto
+}
+
+body {
+	font-family: 'Hammersmith One', sans-serif;
+	font-weight: 400;
+	color: #101413;
+	background: linear-gradient(55deg, #fff 50%, #fdcd3b 50%);
+	height: 884.4px;
+}
+
+img {
+	width: 100%;
+}
+
+button {
+	cursor: pointer;
+	font-family: 'Hammersmith One', sans-serif;
+	border: none;
+}
+
+button:focus {
+	border: none;
+	outline: none;
+}
+
+/* HEADER ================================================================*/
+
+i{
     color: #fff;
     margin-left: 10px;
     font-size: 30px;
@@ -126,9 +149,232 @@ img{
     height: 50px;
 }
 
+/* HOMEPAGE ============================================================== */
+
+.homepage {
+	display: flex;
+	justify-content: space-around;
+	margin: 85px 0;
+}
+
+.content-left {
+	width: 43%;
+}
+
+img {
+	width: 45%;
+}
+
+.homepage h1 {
+	font-size: 90px;
+	line-height: 1.3;
+}
+
+.homepage p {
+	font-size: 24px;
+	line-height: 1.4;
+	margin-top: 30px;
+}
+
+.left-button {
+	text-align: center;
+}
+
+.homepage-buttons {
+	background-color: #F5C72F;
+	color: #101413;
+	font-size: 36px;
+	border-radius: 30px;
+	margin-top: 85px;
+	padding: 15px 70px;
+	transition: .4s;
+}
+
+.homepage-buttons:hover {
+	background-color: #f0b800;
+	color: #fff;
+}
+
+/* MODAL CONNEXION-INSCRIPTION ========================================= */
+
+#submitted-in, #submitted-co {
+	background-color: #F5C72F;
+	border-color: #F5C72F;
+	color: #101413;
+}
+
+#submitted-in:hover, #submitted-co:hover {
+	color: #fff;
+} 
+
+.modal-title button {
+	background-color: #fff;
+	font-size: 20px;
+}
+
+.modal-title {
+	width: 100%;
+}
+
+.btn-modal {
+	text-align: center;
+}
+
+#form-inscription {
+	display: none;
+}
+
+.form-submit {
+	margin-top: 40px;
+}
+
+.form-control {
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid lightgrey;
+	outline: none;
+}
+
+.form-control:focus {
+	border-color: #F5C72F;
+	box-shadow: none;
+}
+
+.form-group input[type=submit] {
+	border-radius: 5px;
+	border: none;
+}
+
+.modal-body {
+	height: 350px;
+	text-align: center;
+}
+
+#form-connexion .form-control {
+	margin-bottom: 35px;
+}
+
+.custom-line {
+	display: flex;
+	justify-content: center;
+}
+
+.error {
+	color: red;
+	font-size: 14px;
+}
+
+/* DASHBOARD ================================================*/
+
+.container-dashboard {
+	display: flex;
+	justify-content: space-between;
+	height: 100%;
+	margin: 50px auto;
+}
+
+/* FAIRE DES GENERALITES AVEC BODY LOG BODY CHART ET TITLE */
+
+#title-dashboard{
+	display: flex;
+	flex-direction: column;
+	width: 12%;
+	background-color: #ececec;
+	border-radius: 5px;
+}
+.body-dashboard{
+	width: 87%;
+	background-color: #ececec;
+	border-radius: 5px;
+}
+#container-chart{
+	width: 95%;
+	margin: 45px auto;
+}
+#container-log{
+	display: none;
+	width: 95%;
+	margin: 45px auto;
+	height: 500px;
+}
+
+.btn-title-dashboard {
+	background: none;
+	width: 100%;
+	padding: 10px;
+	font-size: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+#btn-log{
+	margin-top: 45px;
+}
+.fas{
+	width: 30%;
+}
+.content-button{
+	width: 70%;
+	text-align: left;
+}
+/* LOGS */
+.pagination{
+	width: 100%;
+}
+table{
+	background-color: #fff;
+	width: 100%;height: 100%;
+	text-align: center;
+	border-radius: 5px;
+	box-shadow: 0 1px 22px -12px #000000;
+}
+th,td{
+	padding: 10px 15px;
+}
+th{
+	background-color: #F5C72F;
+	text-transform: uppercase;
+}
+tr:nth-child(odd){
+	background-color: #ececec;
+}
 
 
-/* footer */
+.tr-good{
+	color: green;
+}
+.tr-notgood{
+	color: red;
+}
+/* CHARTS */
+#btn-chart{
+	background-color: #dfdfdf;
+}
+.chart-top{
+	display: flex;
+	justify-content: space-between;
+}
+.litte-chart{
+	width: 30%;height: 100%;
+	padding: 25px;
+	/* border-radius: 30px; */
+	background-color: #fff;
+	box-shadow: 0 1px 22px -12px #607D8B;
+}
+.chart-bottom{
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0;
+}
+.big-chart{
+	width: 48%;height: 100%;
+	padding: 25px;
+	/* border-radius: 30px; */
+	background-color: #fff;
+	box-shadow: 0 1px 22px -12px #607D8B;
+}
+
+
+/* FOOTER ==================================================== */
 footer{
     background-color: #343a40;
 }
@@ -165,7 +411,81 @@ footer{
 }
 
 
-/* responsive */
+/* RESPONSIVE ============================================== */
+
+@media only screen and (max-width: 1400px) {
+	.homepage h1 {
+		font-size: 75px;
+	}
+	.homepage p {
+		font-size: 20px;
+	}
+	.homepage-buttons {
+		font-size: 28px;
+	}
+}
+
+@media only screen and (max-width: 1170px) {
+	.homepage h1 {
+		font-size: 60px;
+	}
+	.homepage p {
+		font-size: 15px;
+	}
+	.homepage-buttons {
+		font-size: 20px;
+	}
+}
+
+@media only screen and (max-width: 935px) {
+	.homepage h1 {
+		font-size: 45px;
+	}
+	.homepage-buttons {
+		font-size: 15px;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.homepage {
+		display: flex;
+		flex-direction: column;
+	}
+	.content-left, img {
+		width: 80%;
+		margin: auto;
+	}
+	img {
+		margin-top: 35px;
+	}
+	.homepage-buttons {
+		margin-top: 35px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.homepage h1 {
+		font-size: 35px;
+	}
+	.homepage p {
+		font-size: 12px;
+	}
+	.homepage-buttons {
+		font-size: 12px;
+	}
+}
+
+@media only screen and (max-width: 270px) {
+	.homepage h1 {
+		font-size: 25px;
+	}
+	.homepage p {
+		font-size: 8px;
+	}
+	.homepage-buttons {
+		font-size: 8px;
+	}
+}
 @media only screen and (max-width: 1832px) {
 	.menu{
 		display: none;
