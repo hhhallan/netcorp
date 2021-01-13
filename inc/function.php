@@ -63,23 +63,22 @@ function generateRandomString($length = 10)
 
 function isLogged()
 {
+    
     if (!empty($_SESSION['user'])) {
+        //echo $_SESSION['user']['id'];
         if (!empty($_SESSION['user']['id']) && is_numeric($_SESSION['user']['id'])) {
+           
             if (!empty($_SESSION['user']['prenom'])) {
-                if (!empty($_SESSION['user']['role'])) {
-                    if ($_SESSION['user']['role'] == 'abonne' || $_SESSION['user']['role'] == 'admin') {
-                        if (!empty($_SESSION['user']['avatar'])) {
-                            if (!empty($_SESSION['user']['ip']) && $_SESSION['user']['ip'] == $_SERVER['REMOTE_ADDR']) {
-                                return true;
-                            }
-                        }
-                    }
+                if (!empty($_SESSION['user']['ip']) && $_SESSION['user']['ip'] == $_SERVER['REMOTE_ADDR']) {
+                    
+                    return true;
                 }
             }
+        
         }
     }
-    return false;
 }
+
 
 function ipConvert($ip)
 {
@@ -211,3 +210,44 @@ function showJson($data)
         die('error in json encoding');
     }
 }
+
+
+function tokenDelay($token_at,$time)
+{
+    $result = strtotime(date('Y-m-d H:i:s')) - strtotime($token_at);
+    if($result < $time)
+    {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function checkPassword($password1,$password2)
+{
+    // PASSWORDS
+if (!empty($password1) && !empty($password2)) {
+    if ($password1 != $password2) {
+        $errors['password2'] = 'Veuillez renseigner des mots de passe identiques.';
+    } elseif (mb_strlen($password1) < 6) {
+        $errors['password1'] = 'Minimum 6 caractères';
+    }
+} else {
+    $errors['password1'] = 'Veuillez renseigner vos mots de passe.';
+    $errors['password2'] = 'Veuillez renseigner vos mots de passe.';
+}
+}
+// if (!isLogged()) {
+//     header('Location: connexion.php');
+// }
+
+// FUNCTIONS PHP - MYSQL
+// function selectWhere($many = '*',$table,$propriete,$pdoconst = PDO::PARAM_STR,$switch,$pdo)
+// {
+//     $sql = "SELECT $many FROM $table WHERE $propriete = :$propriete";
+//     $var = $pdo->prepare($sql);
+//     $var->bindValue(':$propriete',$propriete,$pdoconst);
+//     $var->execute();
+//     $result = $var->$switch;
+//     return $result;
+// };
