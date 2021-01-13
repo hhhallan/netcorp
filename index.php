@@ -3,21 +3,29 @@ session_start();
 require('inc/pdo.php');
 require('inc/function.php');
 
+$title = 'Accueil';
+
 include('inc/header.php'); ?>
 
 
 
-<div class="wrap-homepage">
-
+<div class="wrap-homepage"> 
+    
     <div class="homepage">
         <div class="content-left">
             <h1>Projet réseaux en groupe de 4.</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quis laboriosam itaque sed quas, accusantium ratione. Odit, iste est. Amet, ipsum voluptatem. Mo Illo? Lorem ipsum dolobus enim adipisci facilis, iure non suscipit quo repellendus!</p>
 
             <div class="left-button">
-                <button type="button" id="homepage-button" data-toggle="modal" data-target="#exampleModalCenter">
+                <?php if(isLogged()){ ?>
+                    <button class="homepage-buttons" onclick="window.location.href='dashboard.php'">Mon espace</button>
+                    <button class="homepage-buttons" onclick="window.location.href='deconnexion.php'">deco</button>
+                <?php  } else { ?>
+                    <button type="button" id="homepage-button" class="homepage-buttons" data-toggle="modal" data-target="#exampleModalCenter">
                     Se connecter
                 </button>
+                <?php } ?>
+                
             </div>
         </div>
 
@@ -56,12 +64,12 @@ include('inc/header.php'); ?>
                     <span class="error" id="error-connexion"></span>
 
                     <div class="form-group">
-                        <input type="email" class="form-control" id="co-email" name="co-email" placeholder="E-mail *">
+                        <input type="email" class="form-control form-co-errors" id="co-email" name="co-email" placeholder="E-mail *">
                     </div>
 
                     <div class="form-group">
-                        <input type="password" class="form-control" id="co-password" name="co-password" placeholder="Mot de passe *">
-                        <a href="">Mot de passe oublié ?</a>
+                        <input type="password" class="form-control form-co-errors" id="co-password" name="co-password" placeholder="Mot de passe *">
+                        <a href="forgotmdp.php">Mot de passe oublié ?</a>
                     </div>
 
                     <div class="form-group">
@@ -113,6 +121,8 @@ include('inc/header.php'); ?>
         </div>
     </div>
 </div>
+
+
 </div>
 
 <?php
