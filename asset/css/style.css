@@ -59,13 +59,13 @@ body{
     color: #101413;
     background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
 }
-i{
+.far{
     color: #fff;
     margin-left: 10px;
     font-size: 30px;
     
 }
-i:hover{
+.far:hover{
     color: #F5C72F;
     cursor: pointer;
 }
