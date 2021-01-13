@@ -68,20 +68,16 @@ if(!empty($_GET['email']) && !empty($_GET['token']))
                     header('Location: index.php');
                 }
 
-
-
-            } else {
-                echo 'pas remplie';
-            }
+            } 
 
         } else {
-            die('marche pas pcq + 1heure');
+            echo('Lien expiré.');
         }
     } else {
-        die('marche pas pcq correspond pas');
+        header('Location: 404.php');
     }
 } else {
-    die('marche pas pcq vide');
+    header('Location: 404.php');
 }
    
 

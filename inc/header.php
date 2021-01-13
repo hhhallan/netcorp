@@ -21,10 +21,10 @@
             <?php if (isLogged()) { ?>
                 <nav id="connect" class="navbar navbar-expand-md navbar-light bg-dark">
                     <a href="#"><img src="asset/img/chart.svg" alt="tardis nasa"></a>
-                    <a href="#" class="navbar-brand">NetCorp<a>
+                    <a href="index.php" class="navbar-brand">NetCorp<a>
                             <?php if (isLogged()) { ?>
                                 <!-- <div class="Bonjour"> -->
-                                <p class="hello">Bonjour <span><?php echo ucfirst($_SESSION['user']['name']); ?></span></p>
+                                <p class="hello">Bonjour <span><?php echo ucfirst($_SESSION['user']['prenom']); ?></span></p>
                                 <!-- </div> -->
                             <?php } ?>
                             <div class="navbar-collapse collapse justify-content-stretch" id="navbar7">
@@ -44,13 +44,10 @@
                             <div id="logged" class="menu">
                                 <h3>Mon profil</h3>
                                 <ul class="ul">
-                                    <li class="li"><a class="a" href="">Mon espace client</a></li>
-                                    <li class="li"><a class="a" href="">Déconnexion</a></li>
+                                    <li class="li"><a class="a" href="dashboard.php">Mon espace client</a></li>
+                                    <li class="li"><a class="a" href="deconnexion.php">Déconnexion</a></li>
                                     <li class="li"><a class="a" href="">Autre chose jsp</a></li>
                                 </ul>
-                            </div>
-                            <div class="Bonjour">
-                                <p class="hello">Bonjour <?php echo ucfirst($_SESSION['user']['name']); ?></p>
                             </div>
                 </nav>
             <?php } else { ?>

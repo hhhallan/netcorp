@@ -40,21 +40,19 @@ if(!empty($_POST['submitted-mdp']))
             $var->bindValue(':id',$user['id'],PDO::PARAM_INT);
             $var->execute();
 
-            //header('Location: resetmdp.php?email='.$user['email'].'&token='.$goodToken);
-            echo '<a href="resetmdp.php?email='.$user['email'].'&token='.$goodToken.'">LIEN RESET</a>';
+            header('Location: resetmdp.php?email='.$user['email'].'&token='.$goodToken);
+            //echo '<a href="resetmdp.php?email='.$user['email'].'&token='.$goodToken.'">LIEN RESET</a>';
             // FAIRE UNE REDIRECTION
             } else {
-                echo 'utilisateur inexistant';
+                $errors['email'] = 'Utilisateur inexistant.';
             }
 
         } else {
-            echo 'erreur email invalide';
+            $errors['email'] = 'Veuillez renseigner un e-mail valide.';
         }
     } else {
-        echo 'erreur email non rempli';
+        $errors['email'] = 'Veuillez renseigner ce champ.';
     }
-} else {
-    echo 'erreur submit';
 }
 
 
