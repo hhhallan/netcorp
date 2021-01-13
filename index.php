@@ -3,7 +3,7 @@ session_start();
 require('inc/pdo.php');
 require('inc/function.php');
 
-$title = 'Accueil';
+
 
 include('inc/header.php'); ?>
 
@@ -116,6 +116,7 @@ include('inc/header.php'); ?>
                     </div>
 
                 </form>
+
 
             </div>
         </div>
