@@ -48,12 +48,12 @@
                                     <li class="li"><a class="a" href="">Autre chose jsp</a></li>
                                 </ul>
                             </div>
-                            
+
                 </nav>
             <?php } else { ?>
                 <nav id="notconnect" class="navbar navbar-expand-md navbar-light bg-dark">
                     <!-- <a href="#"><img src="asset/img/chart.svg" alt="tardis nasa"></a> -->
-                    <a href="#" class="navbar-brand">NetCorp<a>
+                    <a href="index.php" class="navbar-brand">NetCorp<a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar7">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
@@ -78,6 +78,9 @@
                                     <li class="li"><a class="a" href="">Autre chose jsp</a></li>
                                 </ul>
                             </div>
+
+                </nav>
         </div>
-        </nav>
-    <?php } ?>
+                    <?php } ?>
+
+        <div id="content-body">

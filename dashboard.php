@@ -3,7 +3,9 @@ session_start();
 require('inc/pdo.php');
 require('inc/function.php');
 
-
+if(!isLogged()){
+    header('Location: 404.php');
+  }
 
 
 $sql = "SELECT * FROM res_trames ORDER BY date DESC";

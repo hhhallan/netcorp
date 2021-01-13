@@ -66,7 +66,7 @@ include('inc/header.php'); ?>
     <form id="form-forgot" method="post" action="forgotmdp.php">
         <div class="form-group">
             <input type="email" name="email" placeholder="E-mail">
-            <span class="error"></span>
+            <span class="error" id="error-forgot-email"></span>
         </div>
 
         <div class="form-group">
