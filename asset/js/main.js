@@ -470,6 +470,15 @@ $(document).ready(function () {
         });
     });
 
+//     function myFunction() {
+//     var x = document.getElementsByClass(".menu");
+//     if (x.className === ".menu") {
+//         x.className += " responsive";
+//     } else {
+//         x.className = ".menu";
+//     }
+// }
+
 
 function convertDate(time) {
     var t = new Date(time * 1000);
@@ -482,3 +491,5 @@ function convertDate(time) {
     date = year + '-' + month + '-' + day + ' ' + h + ':' + m + ':' + s;
     return date;
 }
+
+
