@@ -211,13 +211,3 @@ function showJson($data)
         die('error in json encoding');
     }
 }
-
-/*function insert()
-{
-
-}*/
-
-/*function update()
-{
-
-}*/

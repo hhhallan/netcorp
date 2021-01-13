@@ -13,11 +13,13 @@ $portFrom = trim(strip_tags($_POST['portFrom']));
 $portDest = trim(strip_tags($_POST['portDest']));
 $ipFrom = trim(strip_tags($_POST['ipFrom']));
 $ipDest = trim(strip_tags($_POST['ipDest']));
+$status = trim(strip_tags($_POST['status']));
 
-$sql = "INSERT INTO res_trames (identifiant,date,version,protocol_name,flags,protocol_checksum,header_checksum,port_from,port_dest,ip_from,ip_dest) VALUES(:identification,:date,:version,:nomPro,:flags,:proCheck,:headCheck,:portFrom,:portDest,:ipFrom,:ipDest)";
+$sql = "INSERT INTO res_trames (identifiant,date,status,version,protocol_name,flags,protocol_checksum,header_checksum,port_from,port_dest,ip_from,ip_dest) VALUES(:identification,:date,:status,:version,:nomPro,:flags,:proCheck,:headCheck,:portFrom,:portDest,:ipFrom,:ipDest)";
 $query = $pdo->prepare($sql);
 $query->bindValue(':identification', $identification, PDO::PARAM_STR);
 $query->bindValue(':date', $date, PDO::PARAM_STR);
+$query->bindValue(':status', $status, PDO::PARAM_STR);
 $query->bindValue(':version', $version, PDO::PARAM_INT);
 $query->bindValue(':nomPro', $nomPro, PDO::PARAM_STR);
 $query->bindValue(':flags', $flags, PDO::PARAM_STR);
@@ -28,3 +30,5 @@ $query->bindValue(':portDest', $portDest, PDO::PARAM_STR);
 $query->bindValue(':ipFrom', $ipFrom, PDO::PARAM_STR);
 $query->bindValue(':ipDest', $ipDest, PDO::PARAM_STR);
 $query->execute();
+
+

@@ -13,11 +13,14 @@ $portFrom = trim(strip_tags($_POST['portFrom']));
 $portDest = trim(strip_tags($_POST['portDest']));
 $ipFrom = trim(strip_tags($_POST['ipFrom']));
 $ipDest = trim(strip_tags($_POST['ipDest']));
+$status = trim(strip_tags($_POST['status']));
 
-$sql = "SELECT * FROM res_trames WHERE identifiant = :identification AND date = :date AND version = :version AND protocol_name = :nomPro AND flags = :flags AND protocol_checksum = :proCheck AND header_checksum = :headCheck AND port_from = :portFrom AND port_dest = :portDest AND ip_from = :ipFrom AND ip_dest = :ipDest";
+
+$sql = "SELECT * FROM res_trames WHERE identifiant = :identification AND date = :date AND status = :status AND version = :version AND protocol_name = :nomPro AND flags = :flags AND protocol_checksum = :proCheck AND header_checksum = :headCheck AND port_from = :portFrom AND port_dest = :portDest AND ip_from = :ipFrom AND ip_dest = :ipDest";
 $query = $pdo->prepare($sql);
 $query->bindValue(':identification', $identification, PDO::PARAM_STR);
 $query->bindValue(':date', $date, PDO::PARAM_STR);
+$query->bindValue(':status', $status, PDO::PARAM_STR);
 $query->bindValue(':version', $version, PDO::PARAM_INT);
 $query->bindValue(':nomPro', $nomPro, PDO::PARAM_STR);
 $query->bindValue(':flags', $flags, PDO::PARAM_STR);
