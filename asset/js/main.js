@@ -101,24 +101,11 @@ $(document).ready(function () {
 
         })
 
-    })
-
-function convertDate(time) {
-    var t = new Date(time * 1000);
-    var day = t.getDate();
-    var month = t.getMonth();
-    var year = t.getFullYear();
-    var h = t.getHours();
-    var m = t.getMinutes();
-    var s = t.getSeconds();
-    date = year + '-' + month + '-' + day + ' ' + h + ':' + m + ':' + s;
-    return date;
-}
     $('.far').click(function () {
         $('.menu').animate({
             height: 'toggle'
         });
-    
+
         $('.far').on('click', function (e) {
             var disp = $('.menu').css('display');
             if (disp == 'block') {
@@ -132,5 +119,16 @@ function convertDate(time) {
             }
         });
     });
+})
 
-});
+function convertDate(time) {
+    var t = new Date(time * 1000);
+    var day = t.getDate();
+    var month = t.getMonth();
+    var year = t.getFullYear();
+    var h = t.getHours();
+    var m = t.getMinutes();
+    var s = t.getSeconds();
+    date = year + '-' + month + '-' + day + ' ' + h + ':' + m + ':' + s;
+    return date;
+}
