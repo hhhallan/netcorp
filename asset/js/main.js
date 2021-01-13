@@ -469,7 +469,7 @@ $(document).ready(function () {
             }
         });
     });
-})
+
 
 function convertDate(time) {
     var t = new Date(time * 1000);
