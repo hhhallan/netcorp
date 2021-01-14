@@ -5,25 +5,35 @@ require('inc/function.php');
 
 $title = 'Mot de passe oublié';
 
-include('inc/header.php'); ?>
+include('inc/header.php'); 
+include('modal.php'); ?>
 
 <div class="wrap-forgot">
     <div id="forgot-password">
 
-        <h1>Mot de passe oublié</h1>
-        <p>Vous allez recevoir un e-mail pour rénitialiser votre mot de passe.</p>
-        <a href="index.php">Retour</a>
+        <div class="formulaire-forgot">
 
-        <form id="form-forgot" method="post" action="ajax/ajax-forgot.php">
-            <div class="form-group">
-                <input type="email" name="email" id="email" placeholder="E-mail">
-                <span class="error" id="error-forgot-email"></span>
-            </div>
+            <h2 class="password-title">Mot de passe oublié</h2>
+            <p>Vous allez recevoir un e-mail pour rénitialiser votre mot de passe.</p>
+            
 
-            <div class="form-group">
-                <input type="submit" id="submitted-mdp" name="submitted-mdp" value="Confirmer">
-            </div>
-        </form>
+            <form id="form-forgot" method="post" action="ajax/ajax-forgot.php">
+                <div class="form-group">
+                    <input type="email" class="form-control form-pass-control" name="email" id="email" placeholder="E-mail">
+                    <span class="error" id="error-forgot-email"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" class="form-control form-pass-control" id="submitted-mdp" name="submitted-mdp" value="Confirmer">
+                </div>
+            </form>
+
+            <a href="index.php">Retour</a>
+
+        </div>
+
+        <img id="img-forgot" src="asset/img/forgot-pass-yellow.svg" alt="Mot de passe oublié">
+        
 
     </div>
 </div>

@@ -1,12 +1,30 @@
 $(document).ready(function () {
+    
+    $('.far').click(function () {
+        $('.menu').animate({
+            height: 'toggle'
+        });
 
+        $('.far').on('click', function (e) {
+            var disp = $('.menu').css('display');
+            if (disp == 'block') {
+                $('.menu').css('display', 'none');
+                // console.log('nothing');
+            }
+            else if (disp == 'none') {
+                $('.menu').css('display', 'block');
+                $('.far').find('.menu').show(400)
+                // console.log('block');
+            }
+        });
+    });
     // TRAMES ==========================================================================
-    console.log('ready');
+    // console.log('ready');
     $.ajax({
         type: 'POST',
         url: 'ajax/clean.php',
         success: function () {
-            console.log('success, table clear');
+            // console.log('success, table clear');
         },
         error: function () {
             console.log('error');
@@ -18,7 +36,6 @@ $(document).ready(function () {
         url: url,
         dataType: 'json',
         success: function (data) {
-            console.log(data);
             for (let i = 0; i < data.length; i++) {
                 var identification = data[i].identification;
                 var date = data[i].date;
@@ -101,7 +118,7 @@ $(document).ready(function () {
                         ttl: ttl,
                     },
                     success: function () {
-                        console.log('nice');
+                        // console.log('nice');
                     },
                     error: function () {
                         console.log('Something went wrong');
@@ -131,24 +148,7 @@ $(document).ready(function () {
         maxItems: 2
     });
 
-    $('.far').click(function () {
-        $('.menu').animate({
-            height: 'toggle'
-        });
-
-        $('.far').on('click', function (e) {
-            var disp = $('.menu').css('display');
-            if (disp == 'block') {
-                $('.menu').css('display', 'none');
-                // console.log('nothing');
-            }
-            else if (disp == 'none') {
-                $('.menu').css('display', 'block');
-                $('.far').find('.menu').show(400)
-                // console.log('block');
-            }
-        });
-    });
+    
 
 
     
@@ -497,57 +497,32 @@ $(document).ready(function () {
 
     
 
-    // REQUETE SUCCESS/ECHEC ==================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
-    $.ajax({
-        method: 'POST',
-        url: 'charts/requestfail.php',
-        data: {
-            status: 'success'
-        },
-
-        success: function(response){
-            console.log(response)
-           // console.log(response.nbsuccess)
-           // console.log(response.nball)
-        }
-    })
-
-
-    var ctx = document.getElementById('requestFail').getContext('2d');
-    var chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'doughnut',
-
-        // The data for our dataset
-        data: {
-            labels: ['Echec', 'Réussite'],
-            datasets: [{
-                backgroundColor: [
-                'rgb(228, 39, 39)',
-                'rgb(64, 184, 26)'],
-                // borderColor: [
-                // '#E42727',
-                // '#40B81A'],
-                data: [60,40]
-            }]
-        },
-
-        // Configuration options go here
-        options: {
-            title: {
-                display: true,
-                text: 'Requete'
-            }
-        }
-    });
-    
-
-    //CHARTS onclick
 
 })
 
-// TRAMES ==========================================================================
+// TRAMES bloque mon menu ==========================================================================
     console.log('ready');
     var url = 'https://floriandoyen.fr/resources/frames.php';
     $.ajax({
@@ -587,37 +562,7 @@ $(document).ready(function () {
                         ipDest = response.ipDest;
                     },
                 })
-                /* Check for doublons before adding /!\ not working currently */
-                /*$.ajax({
-                    type: 'POST',
-                    url: 'ajax/select.php',
-                    data: {
-                        identification: identification,
-                        date: date,
-                        version: version,
-                        nomPro: nomPro,
-                        flags: flags,
-                        proCheck: proCheck,
-                        headCheck: headCheck,
-                        portFrom: portFrom,
-                        portDest: portDest,
-                        ipFrom: ipFrom,
-                        ipDest: ipDest,
-                        status: status
-                    },
-                    success: function(back){
-                        if(back.trame == false){
-                            console.log('sending...');
-                            exist = 'true';
-                        } else {
-                            console.log('trame déjà existante')
-                            exist = 'false';
-                        }
-                    },
-                    error: function(){
-                        console.log('error');
-                    }
-                    })*/
+               
                 $.ajax({
                     type: 'POST',
                     url: 'ajax/insert.php',
@@ -651,32 +596,7 @@ $(document).ready(function () {
     })
    
 
-//     function myFunction() {
-//     var x = document.getElementsByClass(".menu");
-//     if (x.className === ".menu") {
-//         x.className += " responsive";
-//     } else {
-//         x.className = ".menu";
-//     }
-// }
-    $('.far').click(function () {
-        $('.menu').animate({
-            height: 'toggle'
-        });
 
-        $('.far').on('click', function (e) {
-            var disp = $('.menu').css('display');
-            if (disp == 'block') {
-                $('.menu').css('display', 'none');
-                // console.log('nothing');
-            }
-            else if (disp == 'none') {
-                $('.menu').css('display', 'block');
-                $('.far').find('.menu').show(400)
-                // console.log('block');
-            }
-        });
-    });
 
 
 
