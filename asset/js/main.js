@@ -1,4 +1,18 @@
 $(document).ready(function () {
+    $('.flexslider').flexslider({
+        slideshowSpeed: 60000,
+        animation: "slide",
+        animationLoop: true,
+        itemWidth: 100,
+        itemMargin: 0,
+        controlNav: false,
+        itemMargin: 150,
+        // pausePlay: true,
+        prevText: " ",
+        nextText: " ",
+        directionNav: true,
+        maxItems: 2
+      });
 
     // Boutton Modal HOMEPAGE =========================================================
     //onclick BOUTTON INSCRIPTION
