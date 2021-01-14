@@ -265,7 +265,31 @@ img {
 
 .error {
 	color: red;
-	font-size: 14px;
+	font-size: 13px;
+}
+
+/* FORGOT PASSWORD ========================================= */
+
+.wrap-forgot{
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+#forgot-password{
+	text-align: center;
+}
+
+/* RESET PASSWORD ========================================= */
+
+.wrap-reset{
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+#reset-password{
+	text-align: center;
 }
 
 /* DASHBOARD ================================================*/

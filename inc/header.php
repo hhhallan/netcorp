@@ -78,7 +78,10 @@
                             </div>
 
                 </nav>
-        </div>
-                    <?php } ?>
 
-        <div id="content-body">
+            <?php } ?>
+        </div>
+    </header>
+
+
+    <div id="content-body">
