@@ -5,7 +5,7 @@ require('inc/function.php');
 
 
 
-include('inc/header.php'); 
+include('inc/header.php');
 include('modal.php'); ?>
 
 
@@ -14,18 +14,21 @@ include('modal.php'); ?>
 
     <div class="homepage">
         <div class="content-left">
-            <?php if(isLogged()) { ?>
+            <?php if (isLogged()) { ?>
+                <h1>Bienvenue sur votre compte NetCorp !</h1>
 
-            <h1>Projet réseaux en groupe de 4.</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quis laboriosam itaque sed quas, accusantium ratione. Odit, iste est. Amet, ipsum voluptatem. Mo Illo? Lorem ipsum dolobus enim adipisci facilis, iure non suscipit quo repellendus!</p>
-            
+                <p class="accueil">Bonjour <span class="hello-user"><?php echo ucfirst($_SESSION['user']['prenom']); ?></span> vous pouvez accéder à vos données en cliquant sur le bouton "Mon espace" ! En cas de question rendez-vous sur la page "contact" vous y retrouverez les adresses mails de nos consultants.</p>
+                
+                
             <?php } else { ?>
+                <h1>NetCorp un choix évident pour analyser vos réseaux !</h1>
 
-            <h1>Projet réseaux en groupe de 4.</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quis laboriosam itaque sed quas, accusantium ratione. Odit, iste est. Amet, ipsum voluptatem. Mo Illo? Lorem ipsum dolobus enim adipisci facilis, iure non suscipit quo repellendus!</p>
+                <p> Une équipe à l'écoute des besoins de votre entreprise,
+                    Des techniciens formés pour vous accompagner et vous conseiller.
+                    Notre technicien se rend dans votre entreprise et procède à l'analyse de votre réseau. Vous pouvez ensuite accéder à vos analyses sous formes de graphiques en vous connectant directement sur notre site. Qu'attendez-vous ? Inscrivez-vous maintenant et restez à jour sur vos analyses !
+                </p>
 
             <?php } ?>
-
             <div class="left-button">
                 <?php if (isLogged()) { ?>
                     <button class="homepage-buttons" onclick="window.location.href='dashboard.php'">Mon espace</button>

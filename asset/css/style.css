@@ -504,17 +504,44 @@ tr:nth-child(odd) {
 	box-shadow: 0 1px 22px -12px #607D8B;
 }
 
-/* FOOTER ==================================================== */
-
-footer {
-	background-color: #343a40;
+/* ERROR 404 */
+.quatre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 200px 0px;
+    color: #2F4858;
+    font-size: 7em;
+}
+/* contact */
+.wrap-contact{
+    max-width: 1200px;
+    width: 100%;
+    margin: 50px auto;
+    font-size: .75em;
+}
+.container-contact{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container-contact img{
+    width: 100%;
+    
 }
 
-.footer {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	color: #fff !important;
+
+
+/* FOOTER ==================================================== */
+footer{
+    background-color: #343a40;
+    
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff !important;
 }
 
 .span:hover {
@@ -697,6 +724,8 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
+
+   
 	.fab {
 		display: none;
 		min-width: 200px;

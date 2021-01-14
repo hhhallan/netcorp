@@ -73,7 +73,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div id="hide" class="menu">
+                            <div  class="menu">
                                 <h3>Bienvenue</h3>
                                 <ul>
                                     <li class="li"><a class="a" data-toggle="modal" data-target="#exampleModalCenter" href="">Inscription/connexion</a></li>
@@ -88,4 +88,8 @@
     </header>
 
 
+<<<<<<< HEAD
+
+=======
     <div id="content-body">
+>>>>>>> 50db5af039225903b98fc7e41c06ab01beb0c95c
