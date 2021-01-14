@@ -19,12 +19,12 @@ include('modal.php'); ?>
 
             <form id="form-forgot" method="post" action="ajax/ajax-forgot.php">
                 <div class="form-group">
-                    <input type="email" class="form-control password-oubli" name="email" id="email" placeholder="E-mail">
+                    <input type="email" class="form-control form-pass-control" name="email" id="email" placeholder="E-mail">
                     <span class="error" id="error-forgot-email"></span>
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" class="form-control" id="submitted-mdp" name="submitted-mdp" value="Confirmer">
+                    <input type="submit" class="form-control form-pass-control" id="submitted-mdp" name="submitted-mdp" value="Confirmer">
                 </div>
             </form>
 
@@ -32,7 +32,7 @@ include('modal.php'); ?>
 
         </div>
 
-        <div class="img-forgot"><img src="asset/img/forgot-pass-yellow.svg" alt="Mot de passe oublié"></div>
+        <img id="img-forgot" src="asset/img/forgot-pass-yellow.svg" alt="Mot de passe oublié">
         
 
     </div>
