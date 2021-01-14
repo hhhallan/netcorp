@@ -9,23 +9,26 @@ include('inc/header.php'); ?>
 
 
 
-<div class="wrap-homepage"> 
-    
+<div class="wrap-homepage">
+
     <div class="homepage">
         <div class="content-left">
-            <h1>Projet réseaux en groupe de 4.</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quis laboriosam itaque sed quas, accusantium ratione. Odit, iste est. Amet, ipsum voluptatem. Mo Illo? Lorem ipsum dolobus enim adipisci facilis, iure non suscipit quo repellendus!</p>
+            <h1>NetCorp un choix évident pour analyser vos réseaux !</h1>
 
+            <p> Une équipe à l'écoute des besoins de votre entreprise,
+                Des techniciens formés pour vous accompagner et vous conseiller.
+                Notre technicien se rend dans votre entreprise et procède à l'analyse de votre réseau. Vous pouvez ensuite accéder à vos analyses sous formes de graphiques en vous connectant directement sur notre site. Qu'attendez-vous ? Inscrivez-vous maintenant et restez à jour sur vos analyses !
+            </p> 
             <div class="left-button">
-                <?php if(isLogged()){ ?>
+                <?php if (isLogged()) { ?>
                     <button class="homepage-buttons" onclick="window.location.href='dashboard.php'">Mon espace</button>
                     <!-- <button class="homepage-buttons" onclick="window.location.href='deconnexion.php'">deco</button> -->
                 <?php  } else { ?>
                     <button type="button" id="homepage-button" class="homepage-buttons" data-toggle="modal" data-target="#exampleModalCenter">
-                    Se connecter
-                </button>
+                        Se connecter
+                    </button>
                 <?php } ?>
-                
+
             </div>
         </div>
 

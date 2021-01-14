@@ -80,5 +80,5 @@
                 </nav>
         </div>
                     <?php } ?>
-
+    </header>
         <div id="content-body">
