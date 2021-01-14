@@ -5,10 +5,10 @@
     <div class="text-center p-3 footer" style="background-color: rgba(0, 0, 0, 0.2)">
         <p class="text-white">© 2020 Copyright: <span class="span">NetCorp</span></p>
         <div class="social">
-            <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in icon"></i></a>
-            <a href="https://fr-fr.facebook.com/"><i class="fab fa-facebook-f icon"></i></a>
-            <a href="https://twitter.com"><i class="fab fa-twitter icon"></i></a>
-            <a href="https://www.instagram.com/"><i class="fab fa-instagram icon"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in icon"></i></a>
+            <a href="https://fr-fr.facebook.com/" target="_blank"><i class="fab fa-facebook-f icon"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter icon"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram icon"></i></a>
         </div>
     </div>
     <!-- Copyright -->
