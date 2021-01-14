@@ -6,7 +6,7 @@ require('inc/function.php');
 
 
 include('inc/header.php'); ?>
-
+</header>
 
 
 <div class="wrap-homepage"> 
