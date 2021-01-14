@@ -70,7 +70,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div id="hide" class="menu">
+                            <div  class="menu">
                                 <h3>Bienvenue</h3>
                                 <ul>
                                     <li class="li"><a class="a" data-toggle="modal" data-target="#exampleModalCenter" href="">Inscription/connexion</a></li>
