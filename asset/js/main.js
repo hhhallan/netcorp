@@ -30,14 +30,6 @@ $(document).ready(function () {
         $('#form-inscription').css('display', 'none')
     })
 
-    // SWITCH FORGOT PASSWORD ==============================================================
-    // $('#forgot-btn').on('click',function (e) {
-    //     e.preventDefault()
-
-    //     $('#forgot-password').css('display', 'block')
-    //     $('.homepage').css('display', 'none')
-    // })
-
 
     // INSCRIPTION AJAX ====================================================================
     $('#form-inscription').submit(function (e) {
@@ -62,11 +54,10 @@ $(document).ready(function () {
 
                 if (response.success == true) {
                     $('#form-inscription').find('input[type=text],input[type=email],input[type=password]').val('')
-                    window.location.replace('index.php')
 
 
                 } else {
-                    console.log('not gg')
+                    //console('not gg')
 
                     if (response.errors.prenom != null) {
 
@@ -114,11 +105,11 @@ $(document).ready(function () {
             data: formco.serialize(),
             dataType: 'json',
             beforeSend: function () {
-                console.log('avant')
+                //console('avant')
                 $('#submitted-co').css('display', 'none')
             },
             success: function (response) {
-                console.log(response)
+                //console(response)
                 $('#submitted-co').css('display', 'inline')
 
                 if (response.success == true) {
@@ -126,7 +117,7 @@ $(document).ready(function () {
                     window.location.replace('index.php')
 
                 } else {
-                    console.log('not gg')
+                    //console('not gg')
 
                     if (response.errors.connexion != null) {
                         $('#error-connexion').html(response.errors.connexion)
@@ -138,38 +129,94 @@ $(document).ready(function () {
         })
     })
   
- // FOROGT PASS AJAX
-    // $('#form-forgot').submit(function (e) {
-    //     console.log('soumis')
-    //     e.preventDefault()
-    //     $('.errors').html('')
+    // FOROGT PASS AJAX =========================================================================
+    $('#form-forgot').submit( function (e) {
+        //console.log('soumis')
+        e.preventDefault()
+        $('.error').html('')
 
-    //     let forgot = $('#form-forgot')
+        let forgot = $('#form-forgot')
 
-    //     $.ajax({
-    //         method: 'POST',
-    //         url: forgot.attr('action'),
-    //         data: forgot.serialize(),
-    //         dataType: 'json',
-    //         success: function (response) {
+        $.ajax({
+            method: 'POST',
+            url: forgot.attr('action'),
+            data: forgot.serialize(),
+            dataType: 'json',
+            beforeSend: function () {
+                //console.log('avant')
+                $('#submitted-mdp').css('display','none')
+            },
+            success: function (response) {
+                //console.log(response)
+                $('#submitted-mdp').css('display','inline')
                 
-    //             if(response.success == true) {
-    //                 console.log('gg')
-    //                 $('#form-forgot').find('input[type=email]').val('')
-    //             } else {
-    //                 console.log('not gg')
+                if(response.success == true) {
+                    //console.log('gg')
+                    $('#form-forgot').find('input[type=email]').val('')
 
-    //                 if (response.errors.connexion != null) {
-    //                     $('#error-forgot-email').html(response.errors.email)
-    //                    // $('.form-co-errors').css('box-shadow','0px 0px 5px 1px #FF0000')
-    //                 } else { $('#error-forgot-email').html('') }
-    //             }
+                    // Redirection reset
+                    window.location='resetmdp.php?email='+ response.emailUser +'&token='+ response.token
 
-    //         }
-    //     })
-    // })
+                } else {
+                    //console.log('not gg')
 
-    // RESET PASS AJAX
+                    if (response.errors.email != null) {
+                        $('#error-forgot-email').html(response.errors.email)
+                       // $('.form-co-errors').css('box-shadow','0px 0px 5px 1px #FF0000')
+                    } else { $('#error-forgot-email').html('') }
+                }
+
+            }
+        })
+    })
+
+    // RESET PASS AJAX ==========================================================================
+    $('#form-reset').submit( function (e) {
+        //console.log('soumis')
+        e.preventDefault()
+        $('.error').html('')
+
+        let reset = $('#form-reset')
+
+        $.ajax({
+            method: 'POST',
+            url: reset.attr('action'),
+            data: reset.serialize(),
+            dataType: 'json',
+            beforeSend: function(){
+                //console.log('avant')
+                $('#submitted-reset').css('display','none')
+
+            },
+            success: function(response) {
+                //console.log(response)
+                $('#submitted-reset').css('display','inline')
+
+                if(response.success == true)
+                {
+                    //console.log('gg')
+                    $('#form-forgot').find('input[type=email]').val('')
+
+                    // Redirection reset
+                    window.location='index.php'
+
+                } else {
+                    //console.log('not gg')
+
+                    if (response.errors.password != null) {
+                        $('#error-reset-pass').html(response.errors.password)
+                       // $('#in-password').css('box-shadow','0px 0px 5px 1px #FF0000')
+                    } else { $('#error-reset-pass').html('') }
+
+                    if (response.errors.cpassword != null) {
+                        $('#error-reset-cpass').html(response.errors.cpassword)
+                      //  $('#in-confirm-password').css('box-shadow','0px 0px 5px 1px #FF0000')
+                    } else { $('#error-reset-cpass').html('') }
+                }
+            }
+        })
+
+    })
 
 
 
