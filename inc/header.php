@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="asset/flexslider/flexslider.css">
     <link rel="stylesheet" href="asset/css/style.css">
 
     <title>NetCorp</title>
@@ -20,11 +21,10 @@
         <div class="wrap-header">
             <?php if (isLogged()) { ?>
                 <nav id="connect" class="navbar navbar-expand-md navbar-light bg-dark">
-                    <a href="#"><img src="asset/img/chart.svg" alt="tardis nasa"></a>
-                    <a href="#" class="navbar-brand">NetCorp<a>
+                    <a href="index.php" class="navbar-brand">NetCorp<a>
                             <?php if (isLogged()) { ?>
                                 <!-- <div class="Bonjour"> -->
-                                <p class="hello">Bonjour <span><?php echo ucfirst($_SESSION['user']['name']); ?></span></p>
+                                <p class="hello">Bonjour <span class="hello-user"><?php echo ucfirst($_SESSION['user']['prenom']); ?></span></p>
                                 <!-- </div> -->
                             <?php } ?>
                             <div class="navbar-collapse collapse justify-content-stretch" id="navbar7">
@@ -37,26 +37,23 @@
                                     </li>
                                     <!-- dropdown -->
                                     <li class="nav-icon">
-                                        <i class="far fa-user-circle"></i>
+                                        <i class="far fa-user-circle" id="test"></i>
                                     </li>
                                 </ul>
                             </div>
-                            <div id="logged" class="menu">
+                            <div id="hide" class="menu">
                                 <h3>Mon profil</h3>
                                 <ul class="ul">
-                                    <li class="li"><a class="a" href="">Mon espace client</a></li>
-                                    <li class="li"><a class="a" href="">Déconnexion</a></li>
-                                    <li class="li"><a class="a" href="">Autre chose jsp</a></li>
+                                    <li class="li"><a class="a" href="dashboard.php">Mon espace client</a></li>
+                                    <li class="li"><a class="a" href="deconnexion.php">Déconnexion</a></li>
                                 </ul>
                             </div>
-                            <div class="Bonjour">
-                                <p class="hello">Bonjour <?php echo ucfirst($_SESSION['user']['name']); ?></p>
-                            </div>
+
                 </nav>
             <?php } else { ?>
                 <nav id="notconnect" class="navbar navbar-expand-md navbar-light bg-dark">
                     <!-- <a href="#"><img src="asset/img/chart.svg" alt="tardis nasa"></a> -->
-                    <a href="#" class="navbar-brand">NetCorp<a>
+                    <a href="index.php" class="navbar-brand">NetCorp<a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar7">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
@@ -69,18 +66,25 @@
                                         <p><a class="nav-link" href="contact.php">Contact</a></p>
                                     </li>
                                     <!-- dropdown -->
-                                    <li class="nav-icon">
+                                    <li class="nav-icon" id="test">
                                         <i class="far fa-user-circle"></i>
                                     </li>
                                 </ul>
                             </div>
-                            <div id="notlogged" class="menu">
+                            <div id="hide" class="menu">
                                 <h3>Bienvenue</h3>
                                 <ul>
                                     <li class="li"><a class="a" data-toggle="modal" data-target="#exampleModalCenter" href="">Inscription/connexion</a></li>
-                                    <li class="li"><a class="a" href="">Autre chose jsp</a></li>
                                 </ul>
                             </div>
-        </div>
-        </nav>
-    <?php } ?>
+
+
+                            </nav>
+
+<?php } ?>
+</div>
+</header>
+
+
+<div id="content-body">
+
