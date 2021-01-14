@@ -56,17 +56,21 @@ table {
 	margin: 0 auto
 }
 
+/* html {
+	height: 100%;
+} */
+
 body {
 	font-family: 'Hammersmith One', sans-serif;
 	font-weight: 400;
 	color: #101413;
 	background: linear-gradient(55deg, #fff 50%, #fdcd3b 50%);
-	height: 100%;
+	min-height: 100vh;
 }
 
-#content-body {
-	height: 100%;
-}
+/* #content-body {
+	min-height: 100vh; 
+} */
 
 img {
 	width: 45%;
@@ -168,7 +172,7 @@ ul.navbar-nav a:hover {
 .homepage {
 	display: flex;
 	justify-content: space-around;
-	margin: 85px 0;
+	margin: 87px 0;
 }
 
 .content-left {
@@ -367,26 +371,33 @@ ul.navbar-nav a:hover {
 	background-color: #ececec;
 	border-radius: 5px;
 }
-.color-status{
+
+.color-status {
 	margin-top: 25px;
 }
-.box-color{
+
+.box-color {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin: 10px auto 0;
 	width: 40%;
 }
-.circle-color{
-	height: 12px;width: 12px;
+
+.circle-color {
+	height: 12px;
+	width: 12px;
 	border-radius: 50%;
 }
-.timeout{
+
+.timeout {
 	background-color: red;
 }
-.success{
+
+.success {
 	background-color: green;
 }
+
 .body-dashboard {
 	width: 87%;
 	background-color: #ececec;
