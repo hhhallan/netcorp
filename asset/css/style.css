@@ -409,7 +409,7 @@ tr:nth-child(odd){
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 512px;
+    margin: 200px 0px;
     color: #2F4858;
     font-size: 7em;
 }
