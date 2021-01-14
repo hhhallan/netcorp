@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="asset/flexslider/flexslider.css">
+    
     <link rel="stylesheet" href="asset/css/style.css">
 
     <title>NetCorp</title>
@@ -79,13 +80,15 @@
                             </div>
 
 
-                            </nav>
+                </nav>
 
-<?php } ?>
-</div>
-</header>
-
-
-<div id="content-body">
+            <?php } ?>
+        </div>
+    </header>
 
 
+<<<<<<< HEAD
+
+=======
+    <div id="content-body">
+>>>>>>> 50db5af039225903b98fc7e41c06ab01beb0c95c

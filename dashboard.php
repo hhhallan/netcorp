@@ -34,6 +34,17 @@ include('modal.php'); ?>
             <button class="btn-title-dashboard" id="btn-chart"><i class="fas fa-chart-pie"></i>
                 <p class="content-button">Graphiques</p>
             </button>
+
+            <div class="color-status" style="display:none;">
+                <div class="box-color">
+                    <div class="circle-color timeout"></div>
+                    <p>Timeout</p>
+                </div>
+                <div class="box-color">
+                    <div class="circle-color success"></div>
+                    <p>Success</p>
+                </div>
+            </div>
         </div>
 
         <div class="body-dashboard">
