@@ -1,10 +1,9 @@
-
 <footer>
     <!-- Copyright -->
     <div class="text-center p-3 footer" style="background-color: rgba(0, 0, 0, 0.2)">
         <p class="text-white">© 2020 Copyright: <span class="span">NetCorp</span></p>
         <div class="social">
-            <a href=""><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://fr-fr.facebook.com/"><i class="fab fa-facebook-f"></i></a>
             <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
             <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
