@@ -1,5 +1,23 @@
 $(document).ready(function () {
 
+    // FLEXSLIDER ===============================================================
+
+    $('.flexslider').flexslider({
+        slideshowSpeed: 60000,
+        animation: "slide",
+        animationLoop: true,
+        itemWidth: 100,
+        itemMargin: 0,
+        controlNav: false,
+        itemMargin: 150,
+        // pausePlay: true,
+        prevText: " ",
+        nextText: " ",
+        directionNav: true,
+        maxItems: 2
+    });
+
+
     // TRAMES ==========================================================================
     console.log('ready');
     $.ajax({
@@ -116,20 +134,7 @@ $(document).ready(function () {
 
     })
 
-    $('.flexslider').flexslider({
-        slideshowSpeed: 60000,
-        animation: "slide",
-        animationLoop: true,
-        itemWidth: 100,
-        itemMargin: 0,
-        controlNav: false,
-        itemMargin: 150,
-        // pausePlay: true,
-        prevText: " ",
-        nextText: " ",
-        directionNav: true,
-        maxItems: 2
-    });
+    
 
     // Boutton Modal HOMEPAGE =========================================================
     //onclick BOUTTON INSCRIPTION
@@ -171,6 +176,7 @@ $(document).ready(function () {
 
                 if (response.success == true) {
                     $('#form-inscription').find('input[type=text],input[type=email],input[type=password]').val('')
+                    window.location.replace('index.php')
 
 
                 } else {

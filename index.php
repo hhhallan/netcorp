@@ -5,22 +5,26 @@ require('inc/function.php');
 
 
 
-<<<<<<< HEAD
 include('inc/header.php'); 
 include('modal.php'); ?>
 
-=======
-include('inc/header.php'); ?>
-</header>
->>>>>>> 69f8f13bc92ecec55aad0a37b1a25ed29c52e918
 
 
 <div class="wrap-homepage">
 
     <div class="homepage">
         <div class="content-left">
+            <?php if(isLogged()) { ?>
+
             <h1>Projet réseaux en groupe de 4.</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quis laboriosam itaque sed quas, accusantium ratione. Odit, iste est. Amet, ipsum voluptatem. Mo Illo? Lorem ipsum dolobus enim adipisci facilis, iure non suscipit quo repellendus!</p>
+            
+            <?php } else { ?>
+
+            <h1>Projet réseaux en groupe de 4.</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quis laboriosam itaque sed quas, accusantium ratione. Odit, iste est. Amet, ipsum voluptatem. Mo Illo? Lorem ipsum dolobus enim adipisci facilis, iure non suscipit quo repellendus!</p>
+
+            <?php } ?>
 
             <div class="left-button">
                 <?php if (isLogged()) { ?>

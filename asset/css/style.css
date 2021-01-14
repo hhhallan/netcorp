@@ -97,14 +97,14 @@ button:focus {
 }
 
 .a {
-	color: #000;
-	/* border-bottom: solid 1px #000; */
+	color: #101413;
+	/* border-bottom: solid 1px #101413; */
 }
 
 h3 {
 	padding-top: 10px;
-	color: #000;
-	border-bottom: solid 1px #000;
+	color: #101413;
+	border-bottom: solid 1px #101413;
 	font-size: 1.3em;
 }
 
@@ -367,7 +367,26 @@ ul.navbar-nav a:hover {
 	background-color: #ececec;
 	border-radius: 5px;
 }
-
+.color-status{
+	margin-top: 25px;
+}
+.box-color{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 10px auto 0;
+	width: 40%;
+}
+.circle-color{
+	height: 12px;width: 12px;
+	border-radius: 50%;
+}
+.timeout{
+	background-color: red;
+}
+.success{
+	background-color: green;
+}
 .body-dashboard {
 	width: 87%;
 	background-color: #ececec;
@@ -383,7 +402,6 @@ ul.navbar-nav a:hover {
 	display: none;
 	width: 95%;
 	margin: 45px auto;
-	height: 500px;
 }
 
 .btn-title-dashboard {
@@ -416,7 +434,7 @@ table {
 	height: 100%;
 	text-align: center;
 	border-radius: 5px;
-	box-shadow: 0 1px 22px -12px #000000;
+	box-shadow: 0 1px 22px -12px #101413;
 }
 
 th, td {
@@ -611,7 +629,6 @@ footer {
 	.container-dashboard {
 		flex-direction: column;
 	}
-	/* METTRE */
 	#title-dashboard {
 		flex-direction: row;
 		width: 100%;
