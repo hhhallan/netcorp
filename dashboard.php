@@ -103,4 +103,4 @@ include('inc/header.php'); ?>
 </div>
 
 <?php
-include('inc/footer.php'); ?>
+include('inc/footerDash.php'); ?>
