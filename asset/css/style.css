@@ -414,31 +414,59 @@ tr:nth-child(odd){
     font-size: 7em;
 }
 /* contact */
-.contact{
-    height: 512px;
+.wrap-contact{
+    max-width: 1200px;
+    width: 100%;
+    margin: 50px auto;
+    font-size: .75em;
 }
-.contact1{
+.container-contact{
     display: flex;
     justify-content: space-between;
-    align-content: space-between;
+    align-items: center;
 }
-.contact2{
-    display: flex;
-    justify-content: space-between;
+.container-contact img{
+    width: 100%;
+    
 }
+/* .contact{
+    margin: 200px 0px; 
+}
+.work-items{
+	margin-left: -2%;
+}
+.work-item{
+	float: left;
+	width: 23%;
+	margin-left: 2%;
+	background-color: #ef4f1d;
+}
+.work-item img{
+	vertical-align: middle;
+	transition: all .2s;
+}
+
+.work-item-content{
+	font-size: .75em;
+	text-align: center;
+	padding: 10px;
+	background-color: #fff;
+	color: #666;
+} */
 
 
 
 /* FOOTER ==================================================== */
 footer{
     background-color: #343a40;
+    
 }
 .footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #fff !important;
-    
+
 }
 
 .span:hover{

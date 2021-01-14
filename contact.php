@@ -7,18 +7,34 @@ include('inc/header.php'); ?>
 
 
 
-<div class="contact">
-    <div class="contact1">
-        <p>Chef de projet: Medjahed Safia contact: safia.medjahed@gmail.com</p>
-        <p>Développeur: Leblond Allan contact: allanstm76@gmail.com</p>
-    </div>
-    <div class="contact2">
-        <p>Développeur: Blin Clément contact: clement.blin76@gmail.com</p>
-        <p>Développeur: Giraud Jules contact: jules.giraud@outlook.fr</p>
+<div class="wrap-contact">
+    <div class="container-contact">
+        <div class="content-contact"><a href="#"><img src="asset/img/work-1.jpg" alt=""></a>
+            <div class="work-item-content">
+                <h3><a href="#" title="">Développeur: Medjahed Safia</a></h3>
+                <p>contact: safia.medjahed@gmail.com</p>
+            </div>
+        </div>
+        <div class="content-contact"><a href="#"><img src="asset/img/work-3.jpg" alt=""></a>
+            <div class="work-item-content">
+                <h3><a href="#" title="">Développeur: Leblond Allan</a></h3>
+                <p>contact: allanstm76@gmail.com</p>
+            </div>
+        </div>
+        <div class="content-contact"><a href="#"><img src="asset/img/work-2.jpg" alt=""></a>
+            <div class="work-item-content">
+                <h3><a href="#" title="">Développeur: Blin Clément</a></h3>
+                <p>contact: clement.blin76@gmail.com</p>
+            </div>
+        </div>
+        <div class="content-contact"> <a href="#"><img src="asset/img/work-4.jpg" alt=""></a>
+            <div class="work-item-content">
+                <h3><a href="#" title="">Développeur: Giraud Jules</a></h3>
+                <p>contact: jules.giraud@outlook.fr</p>
+            </div>
+        </div>
     </div>
 </div>
-
-
 
 
 <?php
