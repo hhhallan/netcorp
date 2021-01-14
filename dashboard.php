@@ -19,7 +19,8 @@ $trames = $var->fetchAll();
 
 
 
-include('inc/header.php'); ?>
+include('inc/header.php'); 
+include('modal.php'); ?>
 
 <div class="wrap-dashboard">
 
