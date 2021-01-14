@@ -3,7 +3,7 @@ session_start();
 require('inc/pdo.php');
 require('inc/function.php');
 
-include('inc/header.php'); 
+include('inc/header.php');
 include('modal.php'); ?>
 
 
@@ -12,26 +12,26 @@ include('modal.php'); ?>
     <div class="container-contact">
         <div class="content-contact"><a href="#"><img src="asset/img/work-1.jpg" alt=""></a>
             <div class="work-item-content">
-                <h3><a href="#" title="">Développeur: Medjahed Safia</a></h3>
-                <p>contact: safia.medjahed@gmail.com</p>
+                <h3 class="color">Développeur: Medjahed Safia</h3>
+                <p><a href="#">contact: safia.medjahed@gmail.com</p>
             </div>
         </div>
         <div class="content-contact"><a href="#"><img src="asset/img/work-3.jpg" alt=""></a>
             <div class="work-item-content">
-                <h3><a href="#" title="">Développeur: Leblond Allan</a></h3>
-                <p>contact: allanstm76@gmail.com</p>
+                <h3 class="color">Développeur: Leblond Allan</h3>
+                <p><a href="#">contact: allanstm76@gmail.com</a></p>
             </div>
         </div>
         <div class="content-contact"><a href="#"><img src="asset/img/work-2.jpg" alt=""></a>
             <div class="work-item-content">
-                <h3><a href="#" title="">Développeur: Blin Clément</a></h3>
-                <p>contact: clement.blin76@gmail.com</p>
+                <h3 class="color">Développeur: Blin Clément</h3>
+                <p><a href="#">contact: clement.blin76@gmail.com</a></p>
             </div>
         </div>
         <div class="content-contact"> <a href="#"><img src="asset/img/work-4.jpg" alt=""></a>
             <div class="work-item-content">
-                <h3><a href="#" title="">Développeur: Giraud Jules</a></h3>
-                <p>contact: jules.giraud@outlook.fr</p>
+                <h3 class="color">Développeur: Giraud Jules</h3>
+                <p><a href="#">contact: jules.giraud@outlook.fr</a></p>
             </div>
         </div>
     </div>
