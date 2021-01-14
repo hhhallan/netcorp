@@ -5,9 +5,14 @@ require('inc/function.php');
 
 
 
+<<<<<<< HEAD
 include('inc/header.php'); 
 include('modal.php'); ?>
 
+=======
+include('inc/header.php'); ?>
+</header>
+>>>>>>> 69f8f13bc92ecec55aad0a37b1a25ed29c52e918
 
 
 <div class="wrap-homepage">
