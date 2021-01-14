@@ -17,7 +17,7 @@ include('modal.php'); ?>
             <?php if (isLogged()) { ?>
                 <h1>Bienvenue sur votre compte NetCorp !</h1>
 
-                <p class="accueil">Bonjour <span class="hello-user"><?php echo ucfirst($_SESSION['user']['prenom']); ?></span> vous pouvez accéder à vos données en cliquant sur le bouton "Mon espace" ! En cas de question rendez-vous sur la page "contact" vous y retrouverez les adresses mails de nos consultants.</p>
+                <p class="accueil">Bonjour <span class="hello-user"><?php echo ucfirst($_SESSION['user']['prenom']); ?></span>, vous pouvez accéder à vos données en cliquant sur le bouton "Mon espace" ! En cas de question, rendez-vous sur la page "contact", vous y retrouverez les adresses mails de nos consultants.</p>
                 
                 
             <?php } else { ?>

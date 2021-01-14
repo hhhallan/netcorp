@@ -88,8 +88,4 @@
     </header>
 
 
-<<<<<<< HEAD
-
-=======
     <div id="content-body">
->>>>>>> 50db5af039225903b98fc7e41c06ab01beb0c95c

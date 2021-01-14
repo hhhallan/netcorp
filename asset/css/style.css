@@ -68,9 +68,9 @@ body {
 	min-height: 100vh;
 }
 
-/* #content-body {
-	min-height: 100vh; 
-} */
+#content-body {
+	height: 100%;
+}
 
 img {
 	width: 45%;
@@ -172,7 +172,7 @@ ul.navbar-nav a:hover {
 .homepage {
 	display: flex;
 	justify-content: space-around;
-	margin: 87px 0;
+	margin: 6.9% 0;
 }
 
 .content-left {
@@ -504,44 +504,48 @@ tr:nth-child(odd) {
 	box-shadow: 0 1px 22px -12px #607D8B;
 }
 
-/* ERROR 404 */
-.quatre{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 200px 0px;
-    color: #2F4858;
-    font-size: 7em;
+/* ERROR 404 ==========================================================*/
+
+.quatre {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 200px 0px;
+	color: #2F4858;
+	font-size: 7em;
 }
-/* contact */
-.wrap-contact{
-    max-width: 1200px;
-    width: 100%;
-    margin: 50px auto;
-    font-size: .75em;
+
+/* CONTACT =========================================================== */
+
+.wrap-contact {
+	max-width: 1600px;
+	width: 100%;
+	margin: 16% auto;
+	font-size: .75em;
 }
-.container-contact{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+.container-contact {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 5%;
 }
+
 .container-contact img{
-    width: 100%;
-    
+	width: 100%;
 }
-
-
 
 /* FOOTER ==================================================== */
-footer{
-    background-color: #343a40;
-    
+
+footer {
+	background-color: #343a40;
 }
-.footer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff !important;
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #fff !important;
 }
 
 .span:hover {
@@ -629,6 +633,9 @@ footer{
 
 /* RESPONSIVE ============================================== */
 
+@media only screen and (max-width: 1680px) {
+	
+}
 @media only screen and (max-width: 1400px) {
 	.homepage h1 {
 		font-size: 75px;
@@ -724,8 +731,6 @@ footer{
 }
 
 @media only screen and (max-width: 600px) {
-
-   
 	.fab {
 		display: none;
 		min-width: 200px;
