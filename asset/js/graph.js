@@ -8,6 +8,7 @@ $(document).ready(function () {
         $('#btn-chart').css('background-color', '#ececec')
         $('#container-log').css('display', 'block')
         $('#container-chart').css('display', 'none')
+        $('.color-status').css('display', 'block')
     })
     $('#btn-chart').on('click', function (e) {
         e.preventDefault()
@@ -16,6 +17,7 @@ $(document).ready(function () {
         $('#btn-chart').css('background-color', '#dfdfdf')
         $('#container-chart').css('display', 'block')
         $('#container-log').css('display', 'none')
+        $('.color-status').css('display', 'none')
     })
 
 
@@ -38,8 +40,8 @@ $(document).ready(function () {
                     labels: [data.dates.jOne, data.dates.jTwo, data.dates.jThree],
                     datasets: [{
                         label: 'Nombre de TTL perdues au total',
-                        backgroundColor: 'rgb(255, 99, 132)',
-                        borderColor: 'rgb(255, 99, 132)',
+                        backgroundColor: '#fdcd3b',
+                        borderColor: '#fdcd3b',
                         data: [data.ttlLost.loseOne, data.ttlLost.loseTwo, data.ttlLost.loseThree]
                     }]
                 },
@@ -79,8 +81,8 @@ $(document).ready(function () {
                     labels: [response.times.jourOne, response.times.jourTwo, response.times.jourThree],
                     datasets: [{
                         label: 'Nombre de trames',
-                        backgroundColor: 'rgb(255, 99, 132)',
-                        borderColor: 'rgb(255, 99, 132)',
+                        backgroundColor: '#fdcd3b',
+                        borderColor: '#fdcd3b',
                         data: [response.nbRequest.nbOne, response.nbRequest.nbTwo, response.nbRequest.nbThree]
                     }]
                 },
@@ -177,8 +179,8 @@ $(document).ready(function () {
                     labels: ['ICMP', 'TLSv1.2', 'UDP', 'TCP', 'Autre'],
                     datasets: [{
                         label: 'Nombre de trames par type de requête',
-                        backgroundColor: 'rgb(255, 99, 132)',
-                        borderColor: 'rgb(255, 99, 132)',
+                        backgroundColor: '#fdcd3b',
+                        borderColor: '#fdcd3b',
                         data: [data.icmp, data.tls, data.udp, data.tcp, data.other]
                     }]
                 },
@@ -227,8 +229,8 @@ $(document).ready(function () {
                     labels: ['Echec', 'Réussite'],
                     datasets: [{
                         backgroundColor: [
-                            'rgb(228, 39, 39)',
-                            'rgb(64, 184, 26)'],
+                            '#ED4337',
+                            '#4BB543'],
                         // borderColor: [
                         // '#E42727',   
                         // '#40B81A'],

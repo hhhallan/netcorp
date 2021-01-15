@@ -19,7 +19,8 @@ $trames = $var->fetchAll();
 
 
 
-include('inc/header.php'); ?>
+include('inc/header.php'); 
+include('modal.php'); ?>
 
 <div class="wrap-dashboard">
 
@@ -33,6 +34,17 @@ include('inc/header.php'); ?>
             <button class="btn-title-dashboard" id="btn-chart"><i class="fas fa-chart-pie"></i>
                 <p class="content-button">Graphiques</p>
             </button>
+
+            <div class="color-status" style="display:none;">
+                <div class="box-color">
+                    <div class="circle-color timeout"></div>
+                    <p>Timeout</p>
+                </div>
+                <div class="box-color">
+                    <div class="circle-color success"></div>
+                    <p>Success</p>
+                </div>
+            </div>
         </div>
 
         <div class="body-dashboard">
@@ -47,6 +59,8 @@ include('inc/header.php'); ?>
                                 <th>Version</th>
                                 <th>Nom du protocole</th>
                                 <th>Flag</th>
+                                <th>TTL</th>
+                                <th>Protocol checksum</th>
                                 <th>Checksum header</th>
                                 <th>Venant de (port)</th>
                                 <th>à destination de (port)</th>
@@ -64,6 +78,8 @@ include('inc/header.php'); ?>
                                 <td><?php echo $trame['version']; ?></td>
                                 <td><?php echo $trame['protocol_name']; ?></td>
                                 <td><?php echo $trame['flags']; ?></td>
+                                <td><?php echo $trame['ttl']; ?></td>
+                                <td><?php echo $trame['protocol_checksum']; ?></td>
                                 <td><?php echo $trame['header_checksum']; ?></td>
                                 <td><?php echo $trame['port_from']; ?></td>
                                 <td><?php echo $trame['port_dest']; ?></td>
