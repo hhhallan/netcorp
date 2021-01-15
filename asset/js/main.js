@@ -1,12 +1,12 @@
 $(document).ready(function () {
 
     // TRAMES ==========================================================================
-    console.log('ready');
+    /*console.log('ready');*/
     $.ajax({
         type: 'POST',
         url: 'ajax/clean.php',
         success: function () {
-            console.log('success, table clear');
+            /*console.log('success, table clear');*/
         },
         error: function () {
             console.log('error');
@@ -101,7 +101,7 @@ $(document).ready(function () {
                         ttl: ttl,
                     },
                     success: function () {
-                        console.log('nice');
+                        /*console.log('nice');*/
                     },
                     error: function () {
                         console.log('Something went wrong');
