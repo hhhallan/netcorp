@@ -4,6 +4,7 @@
     <!-- Copyright -->
     <div class="text-center p-3 footer" style="background-color: rgba(0, 0, 0, 0.2)">
         <p class="text-white">© 2020 Copyright: <span class="span">NetCorp</span></p>
+        <a href="mentions.php">Mentions Légales</a>
         <div class="social">
             <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in icon"></i></a>
             <a href="https://fr-fr.facebook.com/" target="_blank"><i class="fab fa-facebook-f icon"></i></a>

@@ -264,6 +264,7 @@ ul.navbar-nav a:hover {
 .modal-body {
 	height: 350px;
 	text-align: center;
+	overflow: hidden;
 }
 
 #form-connexion .form-control {
@@ -338,7 +339,7 @@ ul.navbar-nav a:hover {
 
 #reset-password {
 	text-align: center;
-	margin: 210px 0;
+	margin: 15.59% 0;
 	display: flex;
 	flex-direction: row-reverse;
 	justify-content: space-between;
@@ -373,29 +374,8 @@ ul.navbar-nav a:hover {
 }
 
 .color-status {
+	text-align: center;
 	margin-top: 25px;
-}
-
-.box-color {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin: 10px auto 0;
-	width: 40%;
-}
-
-.circle-color {
-	height: 12px;
-	width: 12px;
-	border-radius: 50%;
-}
-
-.timeout {
-	background-color: red;
-}
-
-.success {
-	background-color: green;
 }
 
 .body-dashboard {
@@ -413,6 +393,7 @@ ul.navbar-nav a:hover {
 	display: none;
 	width: 95%;
 	margin: 45px auto;
+	overflow: scroll;
 }
 
 .btn-title-dashboard {
@@ -510,7 +491,7 @@ tr:nth-child(odd) {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 200px 0px;
+	margin: 19.9% 0px;
 	color: #2F4858;
 	font-size: 7em;
 }
@@ -518,27 +499,34 @@ tr:nth-child(odd) {
 /* CONTACT =========================================================== */
 
 .wrap-contact {
-	max-width: 1600px;
+	max-width: 1200px;
 	width: 100%;
-	margin: 16% auto;
+	margin: 0 auto;
 	font-size: .75em;
 }
 
 .container-contact {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin: 0 5%;
+	flex-direction: column;
+	width: 70%;
+	margin: 8.73% auto;
 }
-
-.container-contact img{
+.contact-top{
+	display: flex;
+	justify-content: space-between;
+}
+.contact-bottom{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 35px;
+}
+.container-contact img {
 	width: 100%;
 }
-.color{
-    color: #a52a2a;
-    
-}
 
+.color {
+	color: #a52a2a;
+}
 
 /* FOOTER ==================================================== */
 
@@ -595,12 +583,14 @@ footer {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	margin: 60px 650px;
+	margin: 60px auto;
 	padding: 15px;
 	/* background-color:  #fdcd3b; */
 	border: 2px solid black;
 	border-radius: 50px;
-	color: rgb(5, 70, 145);
+	color: #101413;
+	flex: 25%;
+	width: 45%;
 }
 
 .flexslider {
@@ -638,9 +628,23 @@ footer {
 
 /* RESPONSIVE ============================================== */
 
-@media only screen and (max-width: 1680px) {
-	
+/* @media only screen and (max-width: 1680px) {
+	.container-contact {
+		justify-content: space-between;
+	}
+} */
+
+@media only screen and (max-width: 1470px) {
+	section {
+		/* flex-direction: column;
+        flex-wrap: wrap; */
+		/* align-content: space-between; */
+		/* width:45%;
+        margin: 60px auto ; */
+		padding: 35px;
+	}
 }
+
 @media only screen and (max-width: 1400px) {
 	.homepage h1 {
 		font-size: 75px;
@@ -659,6 +663,9 @@ footer {
 	}
 }
 
+@media only screen and (max-width: 1225px) {
+	
+}
 @media only screen and (max-width: 1170px) {
 	.homepage h1 {
 		font-size: 60px;
@@ -718,6 +725,31 @@ footer {
 	}
 }
 
+@media screen and (max-width: 850px) {
+	.contact-top,.contact-bottom{
+		flex-direction: column;
+		margin-top: 0;
+		font-size: 3vw;
+	}
+	.content-contact{
+		margin-top: 45px;
+	}
+	.container-contact{
+		margin: 10px auto;
+	}
+}
+@media screen and (max-width: 768px) {
+	.carousel {
+		padding: 20px 30px;
+	}
+	section {
+		max-width: 530px;
+	}
+	i.far {
+		display: none;
+	}
+}
+
 @media only screen and (max-width: 700px) {
 	.homepage {
 		display: flex;
@@ -732,6 +764,44 @@ footer {
 	}
 	.homepage-buttons {
 		margin-top: 35px;
+	}
+	.deco {
+		display: block;
+		background-color: none;
+		background: rgba(5, 70, 145, 0);
+		color: #101413;
+		width: 50%;
+		font-size: 30px;
+		border-radius: 30px;
+		margin-top: 45px;
+		margin-left: 70px;
+		padding: 15px 15px;
+		transition: .4s;
+	}
+	.deco:hover {
+		background-color: #101413;
+		color: white;
+	}
+	.qui {
+		display: block;
+		background-color: none;
+		background: rgba(5, 70, 145, 0);
+		color: #101413;
+		width: 50%;
+		font-size: 30px;
+		border-radius: 30px;
+		margin-top: 45px;
+		margin-left: 70px;
+		padding: 15px 15px;
+		transition: .4s;
+	}
+	.qui:hover {
+		background-color: #101413;
+		color: #fff;
+	}
+	.hello-user {
+		color: #ffffff;
+		text-shadow: 1px 1px 2px #101413;
 	}
 }
 

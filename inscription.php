@@ -46,7 +46,6 @@ if (!empty($password) && !empty($cpassword)) {
     }
 } else {
     $errors['password'] = 'Veuillez renseigner vos mots de passe.';
-    $errors['cpassword'] = 'Veuillez renseigner vos mots de passe.';
 }
 
 

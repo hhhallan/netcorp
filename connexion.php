@@ -31,10 +31,10 @@ if (!empty($email) && !empty($password)) {
             );
 
         } else {
-            $errors['connexion'] = 'Erreur email/mdp';
+            $errors['connexion'] = 'Erreur d\'e-mail ou de mot de passe.';
         }
     } else {
-        $errors['connexion'] = 'Error credentials';
+        $errors['connexion'] = 'Erreur d\'identification';
     }
 } else {
     $errors['connexion'] = 'Veuillez renseigner les champs';

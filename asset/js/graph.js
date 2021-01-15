@@ -62,6 +62,53 @@ $(document).ready(function () {
         }
     })
 
+    $.ajax({
+        type: 'POST',
+        url: 'ajax/tramePro.php',
+        dataType: 'JSON',
+        data: {
+        },
+        success: function (data) {
+            var ctx = document.getElementById('myChart3').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['ICMP', 'TLSv1.2', 'UDP', 'TCP', 'Autre'],
+                    datasets: [{
+                        label: '# of Vote',
+                        data: [data.icmp, data.tls, data.udp, data.tcp, data.other],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'TRAMES/REQUETE'
+                    }
+                }
+            });
+        },
+        error: function (xhr, textStatus, thrownError) {
+            console.log('error');
+            console.log(xhr);
+            console.log(textStatus);
+            console.log(thrownError);
+        }
+    })
 
     $.ajax({
         type: 'POST',
@@ -106,60 +153,7 @@ $(document).ready(function () {
 
 
 
-    $.ajax({
-        type: 'POST',
-        url: 'ajax/tramePro.php',
-        dataType: 'JSON',
-        data: {
-        },
-        success: function (data) {
-            var ctx = document.getElementById('myChart3').getContext('2d');
-            var myChart = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['ICMP', 'TLSv1.2', 'UDP', 'TCP', 'Autre'],
-                    datasets: [{
-                        label: '# of Vote',
-                        data: [data.icmp, data.tls, data.udp, data.tcp, data.other],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    title: {
-                        display: true,
-                        text: 'TRAMES/REQUETE'
-                    },
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    }
-                }
-            });
-        },
-        error: function (xhr, textStatus, thrownError) {
-            console.log('error');
-            console.log(xhr);
-            console.log(textStatus);
-            console.log(thrownError);
-        }
-    })
+    
 
 
     $.ajax({
@@ -226,7 +220,7 @@ $(document).ready(function () {
 
                 // The data for our dataset
                 data: {
-                    labels: ['Echec', 'Réussite'],
+                    labels: ['Échec', 'Réussite'],
                     datasets: [{
                         backgroundColor: [
                             '#ED4337',

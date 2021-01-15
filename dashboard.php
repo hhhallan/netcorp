@@ -3,9 +3,9 @@ session_start();
 require('inc/pdo.php');
 require('inc/function.php');
 
-if(!isLogged()){
+if (!isLogged()) {
     header('Location: 404.php');
-  }
+}
 
 
 $sql = "SELECT * FROM res_trames ORDER BY date DESC";
@@ -19,7 +19,7 @@ $trames = $var->fetchAll();
 
 
 
-include('inc/header.php'); 
+include('inc/header.php');
 include('modal.php'); ?>
 
 <div class="wrap-dashboard">
@@ -35,60 +35,57 @@ include('modal.php'); ?>
                 <p class="content-button">Graphiques</p>
             </button>
 
-            <div class="color-status" style="display:none;">
-                <div class="box-color">
-                    <div class="circle-color timeout"></div>
-                    <p>Timeout</p>
-                </div>
-                <div class="box-color">
-                    <div class="circle-color success"></div>
-                    <p>Success</p>
-                </div>
-            </div>
         </div>
+
+        
 
         <div class="body-dashboard">
             <!-- CONTAINER DES LOGS display none-->
             <div id="container-log">
-               
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Identifiant</th>
-                                <th>Version</th>
-                                <th>Nom du protocole</th>
-                                <th>Flag</th>
-                                <th>TTL</th>
-                                <th>Protocol checksum</th>
-                                <th>Checksum header</th>
-                                <th>Venant de (port)</th>
-                                <th>à destination de (port)</th>
-                                <th>Ip arrivant</th>
-                                <th>Ip destination</th>
+            <div class="color-status" style="display:none;">
+            <p style="color: red;">Échec</p>
+            <p style="color: green;">Succès</p>
+        </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Identifiant</th>
+                            <th>Version</th>
+                            <th>Nom du protocole</th>
+                            <th>Flag</th>
+                            <th>TTL</th>
+                            <th>Protocol checksum</th>
+                            <th>Checksum header</th>
+                            <th>Venant de (port)</th>
+                            <th>à destination de (port)</th>
+                            <th>Ip arrivant</th>
+                            <th>Ip destination</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($trames as $trame) {
+                            if ($trame['status'] == 'success') {
+                                echo '<tr class="tr-good">';
+                            } elseif ($trame['status'] == 'timeout') {
+                                echo '<tr class="tr-notgood">';
+                            } ?>
+                            <td><?php echo $trame['date']; ?></td> <!-- bold -->
+                            <td><?php echo $trame['identifiant']; ?></td>
+                            <td><?php echo $trame['version']; ?></td>
+                            <td><?php echo $trame['protocol_name']; ?></td>
+                            <td><?php echo $trame['flags']; ?></td>
+                            <td><?php echo $trame['ttl']; ?></td>
+                            <td><?php echo $trame['protocol_checksum']; ?></td>
+                            <td><?php echo $trame['header_checksum']; ?></td>
+                            <td><?php echo $trame['port_from']; ?></td>
+                            <td><?php echo $trame['port_dest']; ?></td>
+                            <td><?php echo $trame['ip_from']; ?></td>
+                            <td><?php echo $trame['ip_dest']; ?></td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($trames as $trame) { 
-                                if($trame['status'] == 'success'){
-                                    echo '<tr class="tr-good">';
-                                } elseif($trame['status'] == 'timeout') {echo '<tr class="tr-notgood">';} ?>
-                                <td><?php echo $trame['date']; ?></td> <!-- bold -->
-                                <td><?php echo $trame['identifiant']; ?></td>
-                                <td><?php echo $trame['version']; ?></td>
-                                <td><?php echo $trame['protocol_name']; ?></td>
-                                <td><?php echo $trame['flags']; ?></td>
-                                <td><?php echo $trame['ttl']; ?></td>
-                                <td><?php echo $trame['protocol_checksum']; ?></td>
-                                <td><?php echo $trame['header_checksum']; ?></td>
-                                <td><?php echo $trame['port_from']; ?></td>
-                                <td><?php echo $trame['port_dest']; ?></td>
-                                <td><?php echo $trame['ip_from']; ?></td>
-                                <td><?php echo $trame['ip_dest']; ?></td>
-                            </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
+                        <?php } ?>
+                    </tbody>
+                </table>
 
             </div>
 
@@ -98,11 +95,12 @@ include('modal.php'); ?>
                         <canvas id="ttlLost" width="400" height="300"></canvas>
                     </div>
                     <div class="litte-chart">
-                        <canvas id="tramDay" width="400" height="300"></canvas>
-                    </div>
-                    <div class="litte-chart">
                         <canvas id="myChart3" width="400" height="300"></canvas>
                     </div>
+                    <div class="litte-chart">
+                        <canvas id="tramDay" width="400" height="300"></canvas>
+                    </div>
+                    
                 </div>
 
                 <div class="chart-bottom">

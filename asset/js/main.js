@@ -34,8 +34,6 @@ $(document).ready(function () {
         directionNav: true,
         maxItems: 2
     });
-
-
     // TRAMES ==========================================================================
     // console.log('ready');
     $.ajax({
@@ -54,6 +52,7 @@ $(document).ready(function () {
         url: url,
         dataType: 'json',
         success: function (data) {
+            //console.log(data)
             for (let i = 0; i < data.length; i++) {
                 var identification = data[i].identification;
                 var date = data[i].date;
@@ -64,8 +63,8 @@ $(document).ready(function () {
                 var portFrom = data[i].protocol.ports.from;
                 var portDest = data[i].protocol.ports.dest;
                 var flags = data[i].flags.code;
-                var ipFrom = data[i].ip.from;
-                var ipDest = data[i].ip.dest;
+                var ipFrom = hexToIpv4(data[i].ip.from);
+                var ipDest = hexToIpv4(data[i].ip.dest);
                 var ttl = data[i].ttl;
                 if (typeof data[i].status !== 'undefined') {
                     var status = data[i].status;
@@ -73,19 +72,20 @@ $(document).ready(function () {
                     var status = 'success';
                 }
                 date = convertDate(date);
-                $.ajax({
-                    type: 'POST',
-                    url: 'ajax/ipconv.php',
-                    dataType: 'json',
-                    data: {
-                        ipFrom: ipFrom,
-                        ipDest: ipDest
-                    },
-                    success: function (response) {
-                        ipFrom = response.ipFrom;
-                        ipDest = response.ipDest;
-                    },
-                })
+                // $.ajax({
+                //     type: 'POST',
+                //     url: 'ajax/ipconv.php',
+                //     dataType: 'json',
+                //     data: {
+                //         ipFrom: ipFrom,
+                //         ipDest: ipDest
+                //     },
+                //     success: function (response) {
+                //         ipFrom = response.ipFrom;
+                //         ipDest = response.ipDest;
+                        
+                //     },
+                // })
                 /* Check for doublons before adding /!\ not working currently */
                 /*$.ajax({
                     type: 'POST',
@@ -136,7 +136,7 @@ $(document).ready(function () {
                         ttl: ttl,
                     },
                     success: function () {
-                        // console.log('nice');
+                         //console.log('nice');
                     },
                     error: function () {
                         console.log('Something went wrong');
@@ -383,227 +383,37 @@ $(document).ready(function () {
         $('#container-log').css('display', 'none')
     })
 
-
-
-
-    //CHARTS
-    var ctx = document.getElementById('ttlLost').getContext('2d');
-    var chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'line',
-
-        // The data for our dataset
-        data: {
-            labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
-            datasets: [{ 
-                label: 'Nombre de TTL perdues au total',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 1,6,34,2,37]
-            }]
-        },
-
-        // Configuration options go here
-        options: {
-            title: {
-                display: true,
-                text: 'TTL'
-            }
-        }
-    });
-    var ctx = document.getElementById('tramDay').getContext('2d');
-    var chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'line',
-
-        // The data for our dataset
-        data: {
-            labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
-            datasets: [{
-                label: 'Nombre de trames',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45]
-            }]
-        },
-
-        // Configuration options go here
-        options: {
-            title: {
-                display: true,
-                text: 'TRAMES'
-            }
-        }
-    });
-
-    
-
-    var ctx = document.getElementById('myChart3').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-    var ctx = document.getElementById('tramType').getContext('2d');
-    var chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'bar',
-
-        // The data for our dataset
-        data: {
-            labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
-            datasets: [{
-                label: 'Nombre de trames par type de requête',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45]
-            }]
-        },
-
-        // Configuration options go here
-        options: {
-            title: {
-                display: true,
-                text: 'TRAMES/REQUETE'
-            }
-        }
-    });
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
 })
 
-// TRAMES bloque mon menu ==========================================================================
-    console.log('ready');
-    var url = 'https://floriandoyen.fr/resources/frames.php';
-    $.ajax({
-        type: 'GET',
-        url: url,
-        dataType: 'json',
-        success: function (data) {
-            console.log(data);
-            for (let i = 0; i < data.length; i++) {
-                var identification = data[i].identification;
-                var date = data[i].date;
-                var version = data[i].version;
-                var nomPro = data[i].protocol.name;
-                var proCheck = data[i].protocol.checksum.status;
-                var headCheck = data[i].headerChecksum;
-                var portFrom = data[i].protocol.ports.from;
-                var portDest = data[i].protocol.ports.dest;
-                var flags = data[i].flags.code;
-                var ipFrom = data[i].ip.from;
-                var ipDest = data[i].ip.dest;
-                if (typeof data[i].status !== 'undefined') {
-                    var status = data[i].status;
-                } else {
-                    var status = 'success';
-                }
-                date = convertDate(date);
-                $.ajax({
-                    type: 'POST',
-                    url: 'ajax/ipconv.php',
-                    dataType: 'json',
-                    data: {
-                        ipFrom: ipFrom,
-                        ipDest: ipDest
-                    },
-                    success: function (response) {
-                        ipFrom = response.ipFrom;
-                        ipDest = response.ipDest;
-                    },
-                })
-               
-                $.ajax({
-                    type: 'POST',
-                    url: 'ajax/insert.php',
-                    data: {
-                        identification: identification,
-                        date: date,
-                        version: version,
-                        nomPro: nomPro,
-                        flags: flags,
-                        proCheck: proCheck,
-                        headCheck: headCheck,
-                        portFrom: portFrom,
-                        portDest: portDest,
-                        ipFrom: ipFrom,
-                        ipDest: ipDest,
-                        status: status
-                    },
-                    success: function () {
-                        console.log('nice');
-                    },
-                    error: function () {
-                        console.log('Something went wrong');
-                    }
-                })
-            }
-        },
-        error: function () {
-            console.log('error');
-        }
 
-    })
    
 
 
-
+    const hexToIpv4 = (ip) => {
+        ip.replace(/\r\n/g, '\n');
+        var lines = ip.split('\n');
+    
+        var output = '';
+        for (var i = 0; i < lines.length; i++) {
+            var line = lines[i];
+            var line = line.replace(/0x/gi, '');
+    
+            var match = /([0-f]+)/i.exec(line);
+            if (match) {
+                var matchText = parseInt(match[1], 16);
+                var converted = ((matchText >> 24) & 0xff) + '.' +
+                    ((matchText >> 16) & 0xff) + '.' +
+                    ((matchText >> 8) & 0xff) + '.' +
+                    (matchText & 0xff);
+                output += converted;
+            }
+            else {
+                output += line;
+            }
+            output += '\n';
+        }
+        return output;
+    }
 
 
 function convertDate(time) {

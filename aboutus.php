@@ -38,18 +38,18 @@ include('modal.php'); ?>
             <ul class="slides">
                 <li>
                     <div class="content-carousel">
-                        <div class="box-top"><img src="asset/img/what-is-icmp.png" style="border-radius: 30px;" /></div>
+                        <div class="box-top"><img src="asset/img/chart-aboutsus.PNG" style="border-radius: 30px;" /></div>
                         <div class="box-bottom text">
-                            <p>Internet Control Message Protocol est l’un des protocoles fondamentaux constituant la suite des protocoles Internet. Il est utilisé pour véhiculer des messages de contrôle et d’erreur pour cette suite de protocoles, par exemple lorsqu’un service ou un hôte est inaccessible.</p>
+                            <p>Grâce à NetCorp, vous pouvez accéder à vos graphiques et surveiller vos données</p>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="content-carousel">
                         <div class="box-top text">
-                            <p>Notre site vous permet d'accéder à vos données ou vous voulez et quand vous voulez dans le monde ! </p>
+                            <p>Ici, vérifiez les infromations de vos différentes trames.</p>
                         </div>
-                        <div class="box-bottom"><img src="asset/img/reseau.png" style="border-radius: 30px;" /></div>
+                        <div class="box-bottom"><img src="asset/img/logs-aboutus.PNG" style="border-radius: 30px;" /></div>
                     </div>
                 </li>
                 <li>
