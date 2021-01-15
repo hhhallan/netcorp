@@ -65,7 +65,7 @@ body {
 	font-weight: 400;
 	color: #101413;
 	background: linear-gradient(55deg, #fff 50%, #fdcd3b 50%);
-	min-height: 100vh;
+
 }
 
 #content-body {
@@ -101,14 +101,18 @@ button:focus {
 }
 
 .a {
+
 	color: #101413;
 	/* border-bottom: solid 1px #101413; */
+
 }
 
 h3 {
 	padding-top: 10px;
+
 	color: #101413;
 	border-bottom: solid 1px #101413;
+
 	font-size: 1.3em;
 }
 
@@ -372,6 +376,7 @@ ul.navbar-nav a:hover {
 	border-radius: 5px;
 }
 
+
 .color-status {
 	margin-top: 25px;
 }
@@ -437,7 +442,9 @@ ul.navbar-nav a:hover {
 	text-align: left;
 }
 
+
 /* LOGS ================================================================ */
+
 
 table {
 	background-color: #fff;
@@ -503,6 +510,7 @@ tr:nth-child(odd) {
 	background-color: #fff;
 	box-shadow: 0 1px 22px -12px #607D8B;
 }
+
 
 /* ERROR 404 ==========================================================*/
 
@@ -595,12 +603,18 @@ footer {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	margin: 60px 650px;
+
+	margin: 60px auto;
+
 	padding: 15px;
 	/* background-color:  #fdcd3b; */
 	border: 2px solid black;
 	border-radius: 50px;
 	color: rgb(5, 70, 145);
+
+	flex: 25%;
+	width: 45%;
+
 }
 
 .flexslider {
@@ -638,9 +652,20 @@ footer {
 
 /* RESPONSIVE ============================================== */
 
-@media only screen and (max-width: 1680px) {
-	
+
+@media only screen and (max-width: 1470px) {
+	section {
+		/* flex-direction: column;
+		flex-wrap: wrap; */
+		/* align-content: space-between; */
+		/* width:45%;
+		margin: 60px auto ; */
+		padding: 35px;
+	}
 }
+
+
+
 @media only screen and (max-width: 1400px) {
 	.homepage h1 {
 		font-size: 75px;
@@ -679,6 +704,7 @@ footer {
 	.container-dashboard {
 		flex-direction: column;
 	}
+
 	#title-dashboard {
 		flex-direction: row;
 		width: 100%;
@@ -715,6 +741,15 @@ footer {
 	.chart-bottom {
 		display: flex;
 		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.carousel {
+		padding: 20px 30px;
+	}
+	section {
+		max-width: 530px;
 	}
 }
 
