@@ -64,8 +64,8 @@ $(document).ready(function () {
                 var portFrom = data[i].protocol.ports.from;
                 var portDest = data[i].protocol.ports.dest;
                 var flags = data[i].flags.code;
-                var ipFrom = data[i].ip.from;
-                var ipDest = data[i].ip.dest;
+                var ipFrom = hexToIpv4(data[i].ip.from);
+                var ipDest = hexToIpv4(data[i].ip.dest);
                 var ttl = data[i].ttl;
                 if (typeof data[i].status !== 'undefined') {
                     var status = data[i].status;
@@ -73,19 +73,19 @@ $(document).ready(function () {
                     var status = 'success';
                 }
                 date = convertDate(date);
-                $.ajax({
-                    type: 'POST',
-                    url: 'ajax/ipconv.php',
-                    dataType: 'json',
-                    data: {
-                        ipFrom: ipFrom,
-                        ipDest: ipDest
-                    },
-                    success: function (response) {
-                        ipFrom = response.ipFrom;
-                        ipDest = response.ipDest;
-                    },
-                })
+                // $.ajax({
+                //     type: 'POST',
+                //     url: 'ajax/ipconv.php',
+                //     dataType: 'json',
+                //     data: {
+                //         ipFrom: ipFrom,
+                //         ipDest: ipDest
+                //     },
+                //     success: function (response) {
+                //         ipFrom = response.ipFrom;
+                //         ipDest = response.ipDest;
+                //     },
+                // })
                 /* Check for doublons before adding /!\ not working currently */
                 /*$.ajax({
                     type: 'POST',
@@ -499,34 +499,9 @@ $(document).ready(function () {
             }
         }
     });
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
 })
+
+
 
 // TRAMES bloque mon menu ==========================================================================
     console.log('ready');
@@ -547,27 +522,27 @@ $(document).ready(function () {
                 var portFrom = data[i].protocol.ports.from;
                 var portDest = data[i].protocol.ports.dest;
                 var flags = data[i].flags.code;
-                var ipFrom = data[i].ip.from;
-                var ipDest = data[i].ip.dest;
+                var ipFrom = hexToIpv4(data[i].ip.from);
+                var ipDest = hexToIpv4(data[i].ip.dest);
                 if (typeof data[i].status !== 'undefined') {
                     var status = data[i].status;
                 } else {
                     var status = 'success';
                 }
                 date = convertDate(date);
-                $.ajax({
-                    type: 'POST',
-                    url: 'ajax/ipconv.php',
-                    dataType: 'json',
-                    data: {
-                        ipFrom: ipFrom,
-                        ipDest: ipDest
-                    },
-                    success: function (response) {
-                        ipFrom = response.ipFrom;
-                        ipDest = response.ipDest;
-                    },
-                })
+                // $.ajax({
+                //     type: 'POST',
+                //     url: 'ajax/ipconv.php',
+                //     dataType: 'json',
+                //     data: {
+                //         ipFrom: ipFrom,
+                //         ipDest: ipDest
+                //     },
+                //     success: function (response) {
+                //         ipFrom = response.ipFrom;
+                //         ipDest = response.ipDest;
+                //     },
+                // })
                
                 $.ajax({
                     type: 'POST',
@@ -602,7 +577,31 @@ $(document).ready(function () {
     })
    
 
+const hexToIpv4 = (ip) => {
+    ip.replace(/\r\n/g, '\n');
+    var lines = ip.split('\n');
 
+    var output = '';
+    for (var i = 0; i < lines.length; i++) {
+        var line = lines[i];
+        var line = line.replace(/0x/gi, '');
+
+        var match = /([0-f]+)/i.exec(line);
+        if (match) {
+            var matchText = parseInt(match[1], 16);
+            var converted = ((matchText >> 24) & 0xff) + '.' +
+                ((matchText >> 16) & 0xff) + '.' +
+                ((matchText >> 8) & 0xff) + '.' +
+                (matchText & 0xff);
+            output += converted;
+        }
+        else {
+            output += line;
+        }
+        output += '\n';
+    }
+    return output;
+}
 
 
 
