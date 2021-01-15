@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
     $('.far').click(function () {
         $('.menu').animate({
             height: 'toggle'
@@ -37,12 +37,13 @@ $(document).ready(function () {
 
 
     // TRAMES ==========================================================================
-    // console.log('ready');
+    /*console.log('ready');*/
+
     $.ajax({
         type: 'POST',
         url: 'ajax/clean.php',
         success: function () {
-            // console.log('success, table clear');
+            /*console.log('success, table clear');*/
         },
         error: function () {
             console.log('error');
@@ -136,7 +137,8 @@ $(document).ready(function () {
                         ttl: ttl,
                     },
                     success: function () {
-                        // console.log('nice');
+                        /*console.log('nice');*/
+
                     },
                     error: function () {
                         console.log('Something went wrong');
@@ -151,12 +153,12 @@ $(document).ready(function () {
 
     })
 
-    
-
-    
 
 
-    
+
+
+
+
     // Boutton Modal HOMEPAGE =========================================================
     //onclick BOUTTON INSCRIPTION
     $('.mod-title-inscription').on('click', function (e) {
@@ -395,11 +397,11 @@ $(document).ready(function () {
         // The data for our dataset
         data: {
             labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
-            datasets: [{ 
+            datasets: [{
                 label: 'Nombre de TTL perdues au total',
                 backgroundColor: 'rgb(255, 99, 132)',
                 borderColor: 'rgb(255, 99, 132)',
-                data: [0, 1,6,34,2,37]
+                data: [0, 1, 6, 34, 2, 37]
             }]
         },
 
@@ -436,7 +438,7 @@ $(document).ready(function () {
         }
     });
 
-    
+
 
     var ctx = document.getElementById('myChart3').getContext('2d');
     var myChart = new Chart(ctx, {
@@ -504,77 +506,7 @@ $(document).ready(function () {
 
 
 // TRAMES bloque mon menu ==========================================================================
-    console.log('ready');
-    var url = 'https://floriandoyen.fr/resources/frames.php';
-    $.ajax({
-        type: 'GET',
-        url: url,
-        dataType: 'json',
-        success: function (data) {
-            console.log(data);
-            for (let i = 0; i < data.length; i++) {
-                var identification = data[i].identification;
-                var date = data[i].date;
-                var version = data[i].version;
-                var nomPro = data[i].protocol.name;
-                var proCheck = data[i].protocol.checksum.status;
-                var headCheck = data[i].headerChecksum;
-                var portFrom = data[i].protocol.ports.from;
-                var portDest = data[i].protocol.ports.dest;
-                var flags = data[i].flags.code;
-                var ipFrom = hexToIpv4(data[i].ip.from);
-                var ipDest = hexToIpv4(data[i].ip.dest);
-                if (typeof data[i].status !== 'undefined') {
-                    var status = data[i].status;
-                } else {
-                    var status = 'success';
-                }
-                date = convertDate(date);
-                // $.ajax({
-                //     type: 'POST',
-                //     url: 'ajax/ipconv.php',
-                //     dataType: 'json',
-                //     data: {
-                //         ipFrom: ipFrom,
-                //         ipDest: ipDest
-                //     },
-                //     success: function (response) {
-                //         ipFrom = response.ipFrom;
-                //         ipDest = response.ipDest;
-                //     },
-                // })
-               
-                $.ajax({
-                    type: 'POST',
-                    url: 'ajax/insert.php',
-                    data: {
-                        identification: identification,
-                        date: date,
-                        version: version,
-                        nomPro: nomPro,
-                        flags: flags,
-                        proCheck: proCheck,
-                        headCheck: headCheck,
-                        portFrom: portFrom,
-                        portDest: portDest,
-                        ipFrom: ipFrom,
-                        ipDest: ipDest,
-                        status: status
-                    },
-                    success: function () {
-                        console.log('nice');
-                    },
-                    error: function () {
-                        console.log('Something went wrong');
-                    }
-                })
-            }
-        },
-        error: function () {
-            console.log('error');
-        }
-
-    })
+    
    
 
 const hexToIpv4 = (ip) => {
