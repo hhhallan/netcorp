@@ -85,6 +85,32 @@ $(document).ready(function () {
                     success: function (response) {
                         ipFrom = response.ipFrom;
                         ipDest = response.ipDest;
+                        $.ajax({
+                            type: 'POST',
+                            url: 'ajax/insert.php',
+                            data: {
+                                identification: identification,
+                                date: date,
+                                version: version,
+                                nomPro: nomPro,
+                                flags: flags,
+                                proCheck: proCheck,
+                                headCheck: headCheck,
+                                portFrom: portFrom,
+                                portDest: portDest,
+                                ipFrom: ipFrom,
+                                ipDest: ipDest,
+                                status: status,
+                                ttl: ttl,
+                            },
+                            success: function () {
+                                /*console.log('nice');*/
+        
+                            },
+                            error: function () {
+                                console.log('Something went wrong');
+                            }
+                        })
                     },
                 })
                 /* Check for doublons before adding /!\ not working currently */
@@ -118,32 +144,7 @@ $(document).ready(function () {
                         console.log('error');
                     }
                     })*/
-                $.ajax({
-                    type: 'POST',
-                    url: 'ajax/insert.php',
-                    data: {
-                        identification: identification,
-                        date: date,
-                        version: version,
-                        nomPro: nomPro,
-                        flags: flags,
-                        proCheck: proCheck,
-                        headCheck: headCheck,
-                        portFrom: portFrom,
-                        portDest: portDest,
-                        ipFrom: ipFrom,
-                        ipDest: ipDest,
-                        status: status,
-                        ttl: ttl,
-                    },
-                    success: function () {
-                        /*console.log('nice');*/
-
-                    },
-                    error: function () {
-                        console.log('Something went wrong');
-                    }
-                })
+                
             }
 
         },
