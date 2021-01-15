@@ -9,28 +9,48 @@ include('inc/header.php'); ?>
 </header>
 
 
-<div class="wrap-homepage"> 
-    
+<div class="wrap-homepage">
+
     <div class="homepage">
         <div class="content-left">
             <h1>Projet réseaux en groupe de 4.</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quis laboriosam itaque sed quas, accusantium ratione. Odit, iste est. Amet, ipsum voluptatem. Mo Illo? Lorem ipsum dolobus enim adipisci facilis, iure non suscipit quo repellendus!</p>
 
             <div class="left-button">
-                <?php if(isLogged()){ ?>
+                <?php if (isLogged()) { ?>
                     <button class="homepage-buttons" onclick="window.location.href='dashboard.php'">Mon espace</button>
                     <!-- <button class="homepage-buttons" onclick="window.location.href='deconnexion.php'">deco</button> -->
                 <?php  } else { ?>
                     <button type="button" id="homepage-button" class="homepage-buttons" data-toggle="modal" data-target="#exampleModalCenter">
-                    Se connecter
-                </button>
+                        Se connecter
+                    </button>
                 <?php } ?>
-                
+
             </div>
         </div>
 
         <img src="asset/img/undraw_data.svg" alt="Illustration unDraw 'data'">
     </div>
+
+    <!-- <div id="forgot-password" style="display: none;">
+
+        <h1>Mot de passe oublié</h1>
+        <p>Vous allez recevoir un e-mail pour rénitialiser votre mot de passe.</p>
+        <a href="index.php">Retour</a>
+
+        <form id="form-forgot" method="post" action="forgotmdp.php">
+            <div class="form-group">
+                <input type="email" name="email" id="email" placeholder="E-mail">
+                <span class="error" id="error-forgot-email"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" id="submitted-mdp" name="submitted-mdp" value="Confirmer">
+            </div>
+        </form>
+
+
+    </div> -->
 
 </div>
 
