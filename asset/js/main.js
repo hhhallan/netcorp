@@ -11,7 +11,8 @@ $(document).ready(function () {
         prevText: " ",
         nextText: " ",
         directionNav: true,
-        maxItems: 2
+        maxItems: 2,
+        direction: "vertical"
       });
 
     // Boutton Modal HOMEPAGE =========================================================
