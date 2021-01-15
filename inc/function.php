@@ -251,3 +251,7 @@ if (!empty($password1) && !empty($password2)) {
 //     $result = $var->$switch;
 //     return $result;
 // };
+
+
+
+

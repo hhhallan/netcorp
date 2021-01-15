@@ -281,7 +281,7 @@ ul.navbar-nav a:hover {
 
 .error {
 	color: red;
-	font-size: 13px;
+    font-size: 13px;
 }
 
 /* FORGOT PASSWORD ========================================= */
@@ -802,7 +802,8 @@ footer {
 		display: block;
 		width: 100%;
 		text-align: left;
-	}
+    }
+    
 }
 
 @media only screen and (max-width: 400px) {

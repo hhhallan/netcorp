@@ -105,7 +105,7 @@ $(document).ready(function () {
                             },
                             success: function () {
                                 /*console.log('nice');*/
-        
+
                             },
                             error: function () {
                                 console.log('Something went wrong');
@@ -144,7 +144,7 @@ $(document).ready(function () {
                         console.log('error');
                     }
                     })*/
-                
+
             }
 
         },
@@ -502,9 +502,11 @@ $(document).ready(function () {
             }
         }
     });
-
-
 })
+
+
+
+// TRAMES bloque mon menu ==========================================================================
 
 
 function convertDate(time) {
